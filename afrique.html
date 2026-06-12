@@ -6,7 +6,8 @@
     <title>Saveurs du Monde | Afrique</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="page-afrique">
+    <!-- Header -->
     <header>
         <div class="container nav-container">
             <a href="index.html" class="logo">Saveurs du Monde</a>
@@ -18,7 +19,7 @@
                     <li><a href="europe.html" class="nav-link">Europe</a></li>
                     <li><a href="amerique.html" class="nav-link">Amérique</a></li>
                 </ul>
-                <button class="hamburger">
+                <button class="hamburger" aria-label="Menu">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -28,97 +29,181 @@
     </header>
 
     <main>
-        <section class="hero hero-afrique">
+        <!-- Hero Afrique -->
+        <section class="hero hero-afrique" style="background-image: url('images/hero-afrique.jpg');">
             <div class="container hero-content">
-                <h1 class="fade-in">Afrique</h1>
-                <p class="fade-in">La cuisine africaine est un voyage de saveurs intenses, mêlant épices, céréales et légumes mijotés pendant des heures. Du tajine marocain aux ragoûts d'Afrique de l'Ouest, chaque plat raconte une histoire de partage et de tradition.</p>
+                <h1 class="fade-in">L'Afrique Gourmande</h1>
+                <p class="fade-in">Un voyage au cœur des terres de soleil, où les épices racontent des histoires de partage et de traditions millénaires.</p>
             </div>
         </section>
 
+        <!-- Grille de Recettes (Flip Cards) -->
         <section class="blob-container" style="padding: 80px 0;">
             <div class="blob blob-1"></div>
             <div class="blob blob-2"></div>
             <div class="container">
-                <h2 class="section-title fade-in">Spécialités locales</h2>
+                <h2 class="section-title fade-in">Spécialités Continentales</h2>
+
                 <div class="grid">
-                    <article class="card card-afrique fade-in">
-                        <div class="card-img">
-                            <img src="images/tajine.jpg" alt="Tajine">
-                        </div>
-                        <div class="card-body">
-                            <span class="badge badge-afrique">Maroc</span>
-                            <h3>Tajine</h3>
-                            <p>Plat mijoté de viande et légumes parfumés aux épices, cuit dans un plat en terre cuite.</p>
-                        </div>
-                    </article>
-                    <article class="card card-afrique fade-in">
-                        <div class="card-img">
-                            <img src="images/jollof-rice.jpg" alt="Jollof Rice">
-                        </div>
-                        <div class="card-body">
-                            <span class="badge badge-afrique">Nigeria / Ghana</span>
-                            <h3>Jollof Rice</h3>
-                            <p>Riz parfumé mijoté dans une sauce tomate épicée, souvent servi avec viande ou poisson.</p>
-                        </div>
-                    </article>
-                    <article class="card card-afrique fade-in">
-                        <div class="card-img">
-                            <img src="images/injera-wat.jpg" alt="Injera & Wat">
-                        </div>
-                        <div class="card-body">
-                            <span class="badge badge-afrique">Éthiopie</span>
-                            <h3>Injera & Wat</h3>
-                            <p>Galette de teff accompagnée d'un ragoût épicé, à déguster avec les mains.</p>
+                    <!-- Plat 1: Tajine -->
+                    <article class="flip-card fade-in">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <div class="flip-card-img">
+                                    <img src="images/tajine.jpg" alt="Tajine Marocain">
+                                </div>
+                                <div class="flip-card-content">
+                                    <span class="badge">Maroc</span>
+                                    <h3>Tajine d'Agneau</h3>
+                                    <p>Un classique mijoté aux abricots et amandes.</p>
+                                </div>
+                            </div>
+                            <div class="flip-card-back">
+                                <h4>Ingrédients</h4>
+                                <ul>
+                                    <li>800g d'épaule d'agneau</li>
+                                    <li>Abricots secs, amandes</li>
+                                    <li>Ras-el-hanout, cannelle</li>
+                                    <li>Oignons, ail, miel</li>
+                                </ul>
+                                <h4>Recette</h4>
+                                <p>Faire revenir la viande. Ajouter les oignons et les épices. Couvrir d'eau et laisser mijoter 1h30. Ajouter les abricots et le miel 20 min avant la fin.</p>
+                            </div>
                         </div>
                     </article>
-                    <article class="card card-afrique fade-in">
-                        <div class="card-img">
-                            <img src="images/couscous.jpg" alt="Couscous">
-                        </div>
-                        <div class="card-body">
-                            <span class="badge badge-afrique">Maghreb</span>
-                            <h3>Couscous</h3>
-                            <p>Semoule vapeur servie avec légumes et viande mijotés.</p>
-                        </div>
-                    </article>
-                    <article class="card card-afrique fade-in">
-                        <div class="card-img">
-                            <img src="images/bobotie.jpg" alt="Bobotie">
-                        </div>
-                        <div class="card-body">
-                            <span class="badge badge-afrique">Afrique du Sud</span>
-                            <h3>Bobotie</h3>
-                            <p>Viande hachée épicée recouverte d'une couche d'œuf et de lait, cuite au four.</p>
-                        </div>
-                    </article>
-                    <article class="card card-afrique fade-in">
-                        <div class="card-img">
-                            <img src="images/thieboudienne.jpg" alt="Thiéboudienne">
-                        </div>
-                        <div class="card-body">
-                            <span class="badge badge-afrique">Sénégal</span>
-                            <h3>Thiéboudienne</h3>
-                            <p>Plat national à base de riz, poisson et légumes mijotés dans une sauce tomate.</p>
+
+                    <!-- Plat 2: Jollof Rice -->
+                    <article class="flip-card fade-in">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <div class="flip-card-img">
+                                    <img src="images/jollof-rice.jpg" alt="Jollof Rice">
+                                </div>
+                                <div class="flip-card-content">
+                                    <span class="badge">Nigeria</span>
+                                    <h3>Jollof Rice</h3>
+                                    <p>Riz épicé à la tomate, l'emblème de l'Afrique de l'Ouest.</p>
+                                </div>
+                            </div>
+                            <div class="flip-card-back">
+                                <h4>Ingrédients</h4>
+                                <ul>
+                                    <li>Riz long grain</li>
+                                    <li>Purée de tomate, piments</li>
+                                    <li>Oignons, thym, laurier</li>
+                                    <li>Bouillon de viande</li>
+                                </ul>
+                                <h4>Recette</h4>
+                                <p>Mixer tomates, piments et oignons. Faire revenir le riz dans l'huile, ajouter le mélange de tomates et le bouillon. Cuire à feu doux jusqu'à absorption.</p>
+                            </div>
                         </div>
                     </article>
-                    <article class="card card-afrique fade-in">
-                        <div class="card-img">
-                            <img src="images/poulet-piri-piri.jpg" alt="Poulet Piri Piri">
-                        </div>
-                        <div class="card-body">
-                            <span class="badge badge-afrique">Mozambique</span>
-                            <h3>Poulet Piri Piri</h3>
-                            <p>Poulet grillé mariné dans une sauce piquante au piment.</p>
+
+                    <!-- Plat 3: Injera & Wat -->
+                    <article class="flip-card fade-in">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <div class="flip-card-img">
+                                    <img src="images/injera-wat.jpg" alt="Injera & Wat">
+                                </div>
+                                <div class="flip-card-content">
+                                    <span class="badge">Éthiopie</span>
+                                    <h3>Doro Wat</h3>
+                                    <p>Ragoût de poulet épicé servi sur une galette Injera.</p>
+                                </div>
+                            </div>
+                            <div class="flip-card-back">
+                                <h4>Ingrédients</h4>
+                                <ul>
+                                    <li>Farine de Teff (pour l'Injera)</li>
+                                    <li>Poulet, Œufs durs</li>
+                                    <li>Mélange d'épices Berbéré</li>
+                                    <li>Beurre clarifié (Niter Kibbeh)</li>
+                                </ul>
+                                <h4>Recette</h4>
+                                <p>Préparer l'injera fermentée. Faire revenir beaucoup d'oignons sans huile. Ajouter le berbéré et le beurre. Mijoter le poulet dedans et finir par les œufs.</p>
+                            </div>
                         </div>
                     </article>
-                    <article class="card card-afrique fade-in">
-                        <div class="card-img">
-                            <img src="images/fufu.jpg" alt="Fufu">
+
+                    <!-- Plat 4: Couscous -->
+                    <article class="flip-card fade-in">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <div class="flip-card-img">
+                                    <img src="images/couscous.jpg" alt="Couscous Royal">
+                                </div>
+                                <div class="flip-card-content">
+                                    <span class="badge">Maghreb</span>
+                                    <h3>Couscous Royal</h3>
+                                    <p>Semoule fine accompagnée de sept légumes et viandes.</p>
+                                </div>
+                            </div>
+                            <div class="flip-card-back">
+                                <h4>Ingrédients</h4>
+                                <ul>
+                                    <li>Semoule de blé dur</li>
+                                    <li>Courgettes, carottes, navets</li>
+                                    <li>Pois chiches, agneau, merguez</li>
+                                    <li>Harissa, épices à couscous</li>
+                                </ul>
+                                <h4>Recette</h4>
+                                <p>Cuire les légumes et la viande dans un bouillon épicé. Préparer la semoule à la vapeur au-dessus du bouillon. Servir garni de pois chiches.</p>
+                            </div>
                         </div>
-                        <div class="card-body">
-                            <span class="badge badge-afrique">Afrique centrale</span>
-                            <h3>Fufu</h3>
-                            <p>Pâte de manioc ou d'igname, servie avec une sauce ou soupe épicée.</p>
+                    </article>
+
+                    <!-- Plat 5: Bobotie -->
+                    <article class="flip-card fade-in">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <div class="flip-card-img">
+                                    <img src="images/bobotie.jpg" alt="Bobotie">
+                                </div>
+                                <div class="flip-card-content">
+                                    <span class="badge">Afrique du Sud</span>
+                                    <h3>Bobotie</h3>
+                                    <p>Gratin de viande hachée épicée, raisins et crème d'œuf.</p>
+                                </div>
+                            </div>
+                            <div class="flip-card-back">
+                                <h4>Ingrédients</h4>
+                                <ul>
+                                    <li>Bœuf haché, pain de mie</li>
+                                    <li>Poudre de curry, chutney</li>
+                                    <li>Raisins secs, amandes</li>
+                                    <li>Lait et œufs</li>
+                                </ul>
+                                <h4>Recette</h4>
+                                <p>Faire revenir la viande avec épices et raisins. Mettre en plat. Recouvrir d'un mélange lait/œufs. Cuire au four 30 min jusqu'à ce que le dessus soit doré.</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Plat 6: Thiéboudienne -->
+                    <article class="flip-card fade-in">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <div class="flip-card-img">
+                                    <img src="images/thieboudienne.jpg" alt="Thiéboudienne">
+                                </div>
+                                <div class="flip-card-content">
+                                    <span class="badge">Sénégal</span>
+                                    <h3>Thiéboudienne</h3>
+                                    <p>Le plat national : riz au poisson et légumes du jardin.</p>
+                                </div>
+                            </div>
+                            <div class="flip-card-back">
+                                <h4>Ingrédients</h4>
+                                <ul>
+                                    <li>Poisson frais (Mérou ou Thiof)</li>
+                                    <li>Riz cassé, concentré de tomate</li>
+                                    <li>Manioc, carotte, aubergine</li>
+                                    <li>Couscous de mil (Yet)</li>
+                                </ul>
+                                <h4>Recette</h4>
+                                <p>Farcir le poisson d'un mélange d'herbes. Le cuire dans une sauce tomate avec les légumes. Retirer le tout et cuire le riz dans le bouillon restant.</p>
+                            </div>
                         </div>
                     </article>
                 </div>
@@ -126,6 +211,7 @@
         </section>
     </main>
 
+    <!-- Footer -->
     <footer>
         <div class="container">
             <nav class="footer-nav">
@@ -135,7 +221,7 @@
                 <a href="europe.html">Europe</a>
                 <a href="amerique.html">Amérique</a>
             </nav>
-            <p class="copyright">Projet scolaire – Saveurs du Monde &copy; 2023</p>
+            <p class="copyright">Saveurs du Monde &copy; 2023 – Voyage Gastronomique</p>
         </div>
     </footer>
 

@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Saveurs du Monde | Accueil</title>
+    <title>Saveurs du Monde | Voyage Culinaire</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="page-home">
+    <!-- Header avec navigation sliding -->
     <header>
         <div class="container nav-container">
             <a href="index.html" class="logo">Saveurs du Monde</a>
@@ -18,7 +19,7 @@
                     <li><a href="europe.html" class="nav-link">Europe</a></li>
                     <li><a href="amerique.html" class="nav-link">Amérique</a></li>
                 </ul>
-                <button class="hamburger">
+                <button class="hamburger" aria-label="Menu">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -28,27 +29,65 @@
     </header>
 
     <main>
+        <!-- Section Hero percutante -->
         <section class="hero" style="background-image: url('images/hero-home.jpg');">
             <div class="container hero-content">
-                <h1 class="fade-in">Un tour du monde en saveurs</h1>
-                <p class="fade-in">Découvrez les richesses culinaires des quatre coins du globe à travers un voyage gustatif inoubliable.</p>
-                <a href="#continents" class="btn btn-primary btn-discover fade-in">Découvrir</a>
+                <h1 class="fade-in">L'Éveil de vos Papilles</h1>
+                <p class="fade-in">Explorez les secrets culinaires des cinq continents. Une immersion totale dans les traditions, les épices et les arômes du monde entier.</p>
+                <a href="#biographie" class="btn btn-primary btn-discover fade-in">Commencer le voyage</a>
             </div>
         </section>
 
-        <section id="continents" class="blob-container" style="padding: 80px 0;">
+        <!-- Section Biographie Culinaire -->
+        <section id="biographie" class="bio-section blob-container">
             <div class="blob blob-1"></div>
+            <div class="container">
+                <h2 class="section-title fade-in">Biographie Culinaire</h2>
+                <div class="bio-grid">
+                    <article class="bio-item fade-in">
+                        <span class="bio-icon">🌍</span>
+                        <h3>Afrique</h3>
+                        <p>Une cuisine de terre et de feu. L'Afrique offre une diversité incroyable, des saveurs pimentées du Nigeria aux tajines parfumés du Maghreb. Les céréales comme le mil et le teff s'allient aux ragoûts généreux pour un partage authentique.</p>
+                        <a href="afrique.html" class="btn-link">Découvrir l'Afrique →</a>
+                    </article>
+
+                    <article class="bio-item fade-in">
+                        <span class="bio-icon">🏮</span>
+                        <h3>Asie</h3>
+                        <p>L'art de l'équilibre. Entre umami japonais, piquant thaïlandais et épices indiennes, l'Asie maîtrise les contrastes. La fraîcheur des herbes s'y marie à des techniques millénaires pour créer des plats sains et raffinés.</p>
+                        <a href="asie.html" class="btn-link">Découvrir l'Asie →</a>
+                    </article>
+
+                    <article class="bio-item fade-in">
+                        <span class="bio-icon">🍷</span>
+                        <h3>Europe</h3>
+                        <p>Le berceau de la gastronomie classique. Des terroirs riches qui ont donné naissance aux plus grands standards : pâtisseries françaises, pâtes italiennes et plats mijotés du Nord. Une cuisine de tradition et de savoir-faire.</p>
+                        <a href="europe.html" class="btn-link">Découvrir l'Europe →</a>
+                    </article>
+
+                    <article class="bio-item fade-in">
+                        <span class="bio-icon">🌶️</span>
+                        <h3>Amérique</h3>
+                        <p>Un melting-pot vibrant. Des steppes du Nord aux montagnes des Andes, l'Amérique est une explosion de couleurs. Tacos, ceviches et grillades racontent une histoire de rencontres entre cultures indigènes et influences mondiales.</p>
+                        <a href="amerique.html" class="btn-link">Découvrir l'Amérique →</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Continents - Grid Visuel -->
+        <section class="blob-container" style="padding: 100px 0;">
             <div class="blob blob-2"></div>
             <div class="container">
-                <h2 class="section-title fade-in">Nos continents</h2>
+                <h2 class="section-title fade-in">Nos Destinations</h2>
                 <div class="grid">
                     <article class="card fade-in">
                         <div class="card-img">
                             <img src="images/hero-afrique.jpg" alt="Cuisine Africaine">
                         </div>
                         <div class="card-body">
-                            <h3>Afrique</h3>
-                            <p>La cuisine africaine est un voyage de saveurs intenses, mêlant épices, céréales et légumes mijotés pendant des heures. Du tajine marocain aux ragoûts d'Afrique de l'Ouest, chaque plat raconte une histoire de partage et de tradition.</p>
+                            <h3>L'Afrique Vibrante</h3>
+                            <p>Laissez-vous emporter par les arômes envoûtants des épices et des plats ancestraux du continent africain.</p>
                             <a href="afrique.html" class="btn btn-primary" style="margin-top: auto;">Explorer</a>
                         </div>
                     </article>
@@ -58,8 +97,8 @@
                             <img src="images/hero-asie.jpg" alt="Cuisine Asiatique">
                         </div>
                         <div class="card-body">
-                            <h3>Asie</h3>
-                            <p>La cuisine asiatique séduit par son équilibre entre fraîcheur, épices et techniques ancestrales. Entre les saveurs umami du Japon, les currys parfumés de l'Inde et les soupes réconfortantes du Vietnam, chaque bouchée est une découverte.</p>
+                            <h3>L'Asie Mystique</h3>
+                            <p>Un voyage entre tradition et modernité, où chaque bouchée est une nouvelle expérience sensorielle.</p>
                             <a href="asie.html" class="btn btn-primary" style="margin-top: auto;">Explorer</a>
                         </div>
                     </article>
@@ -69,8 +108,8 @@
                             <img src="images/hero-europe.jpg" alt="Cuisine Européenne">
                         </div>
                         <div class="card-body">
-                            <h3>Europe</h3>
-                            <p>La cuisine européenne est synonyme de tradition et de gourmandise : des pâtes italiennes aux pâtisseries françaises, en passant par les plats mijotés d'Europe de l'Est. Un patrimoine culinaire transmis de génération en génération.</p>
+                            <h3>L'Europe Gourmande</h3>
+                            <p>Redécouvrez les classiques qui ont façonné l'histoire de la gastronomie mondiale.</p>
                             <a href="europe.html" class="btn btn-primary" style="margin-top: auto;">Explorer</a>
                         </div>
                     </article>
@@ -80,8 +119,8 @@
                             <img src="images/hero-amerique.jpg" alt="Cuisine Américaine">
                         </div>
                         <div class="card-body">
-                            <h3>Amérique</h3>
-                            <p>La cuisine américaine, du nord au sud, est un véritable melting-pot de cultures indigènes, européennes et africaines. Tacos mexicains, burgers, ceviche péruvien ou feijoada brésilienne : une explosion de couleurs et de saveurs.</p>
+                            <h3>L'Amérique Audacieuse</h3>
+                            <p>Une fusion de cultures et de saveurs qui défie les frontières et ravit les explorateurs culinaires.</p>
                             <a href="amerique.html" class="btn btn-primary" style="margin-top: auto;">Explorer</a>
                         </div>
                     </article>
@@ -90,6 +129,7 @@
         </section>
     </main>
 
+    <!-- Footer -->
     <footer>
         <div class="container">
             <nav class="footer-nav">
@@ -99,7 +139,7 @@
                 <a href="europe.html">Europe</a>
                 <a href="amerique.html">Amérique</a>
             </nav>
-            <p class="copyright">Projet scolaire – Saveurs du Monde &copy; 2023</p>
+            <p class="copyright">Saveurs du Monde &copy; 2023 – Voyage Gastronomique</p>
         </div>
     </footer>
 

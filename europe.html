@@ -6,7 +6,7 @@
     <title>Saveurs du Monde | Europe</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="page-europe">
     <header>
         <div class="container nav-container">
             <a href="index.html" class="logo">Saveurs du Monde</a>
@@ -18,7 +18,7 @@
                     <li><a href="europe.html" class="nav-link">Europe</a></li>
                     <li><a href="amerique.html" class="nav-link">Amérique</a></li>
                 </ul>
-                <button class="hamburger">
+                <button class="hamburger" aria-label="Menu">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -28,10 +28,10 @@
     </header>
 
     <main>
-        <section class="hero hero-europe">
+        <section class="hero hero-europe" style="background-image: url('images/hero-europe.jpg');">
             <div class="container hero-content">
-                <h1 class="fade-in">Europe</h1>
-                <p class="fade-in">La cuisine européenne est synonyme de tradition et de gourmandise : des pâtes italiennes aux pâtisseries françaises, en passant par les plats mijotés d'Europe de l'Est. Un patrimoine culinaire transmis de génération en génération.</p>
+                <h1 class="fade-in">L'Europe Gourmande</h1>
+                <p class="fade-in">Du raffinement français à la générosité méditerranéenne, redécouvrez le berceau de la gastronomie.</p>
             </div>
         </section>
 
@@ -39,86 +39,167 @@
             <div class="blob blob-1"></div>
             <div class="blob blob-2"></div>
             <div class="container">
-                <h2 class="section-title fade-in">Spécialités locales</h2>
+                <h2 class="section-title fade-in">Spécialités Continentales</h2>
                 <div class="grid">
-                    <article class="card card-europe fade-in">
-                        <div class="card-img">
-                            <img src="images/pizza.jpg" alt="Pizza">
-                        </div>
-                        <div class="card-body">
-                            <span class="badge badge-europe">Italie</span>
-                            <h3>Pizza</h3>
-                            <p>Pâte garnie de tomate, mozzarella et divers ingrédients, cuite au four.</p>
-                        </div>
-                    </article>
-                    <article class="card card-europe fade-in">
-                        <div class="card-img">
-                            <img src="images/paella.jpg" alt="Paella">
-                        </div>
-                        <div class="card-body">
-                            <span class="badge badge-europe">Espagne</span>
-                            <h3>Paella</h3>
-                            <p>Riz safrané cuisiné avec fruits de mer, poulet et légumes.</p>
-                        </div>
-                    </article>
-                    <article class="card card-europe fade-in">
-                        <div class="card-img">
-                            <img src="images/croissant.jpg" alt="Croissant">
-                        </div>
-                        <div class="card-body">
-                            <span class="badge badge-europe">France</span>
-                            <h3>Croissant</h3>
-                            <p>Viennoiserie feuilletée au beurre, symbole de la boulangerie française.</p>
+                    <!-- Plat 1: Pizza -->
+                    <article class="flip-card fade-in">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <div class="flip-card-img">
+                                    <img src="images/pizza.jpg" alt="Pizza">
+                                </div>
+                                <div class="flip-card-content">
+                                    <span class="badge">Italie</span>
+                                    <h3>Pizza Margherita</h3>
+                                    <p>La simplicité royale : tomate, mozzarella et basilic.</p>
+                                </div>
+                            </div>
+                            <div class="flip-card-back">
+                                <h4>Ingrédients</h4>
+                                <ul>
+                                    <li>Pâte à pizza artisanale</li>
+                                    <li>Tomates San Marzano</li>
+                                    <li>Mozzarella di Bufala</li>
+                                    <li>Basilic frais, huile d'olive</li>
+                                </ul>
+                                <h4>Recette</h4>
+                                <p>Étaler la pâte. Garnir de tomate et mozzarella. Cuire à très haute température (400°C) pendant 90 secondes. Ajouter le basilic à la sortie du four.</p>
+                            </div>
                         </div>
                     </article>
-                    <article class="card card-europe fade-in">
-                        <div class="card-img">
-                            <img src="images/moussaka.jpg" alt="Moussaka">
-                        </div>
-                        <div class="card-body">
-                            <span class="badge badge-europe">Grèce</span>
-                            <h3>Moussaka</h3>
-                            <p>Gratin d'aubergines, viande hachée et béchamel.</p>
-                        </div>
-                    </article>
-                    <article class="card card-europe fade-in">
-                        <div class="card-img">
-                            <img src="images/goulash.jpg" alt="Goulash">
-                        </div>
-                        <div class="card-body">
-                            <span class="badge badge-europe">Hongrie</span>
-                            <h3>Goulash</h3>
-                            <p>Ragoût de bœuf mijoté au paprika, servi avec du pain ou des pâtes.</p>
-                        </div>
-                    </article>
-                    <article class="card card-europe fade-in">
-                        <div class="card-img">
-                            <img src="images/fish-and-chips.jpg" alt="Fish & Chips">
-                        </div>
-                        <div class="card-body">
-                            <span class="badge badge-europe">Royaume-Uni</span>
-                            <h3>Fish & Chips</h3>
-                            <p>Poisson pané frit accompagné de frites épaisses.</p>
+
+                    <!-- Plat 2: Paella -->
+                    <article class="flip-card fade-in">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <div class="flip-card-img">
+                                    <img src="images/paella.jpg" alt="Paella">
+                                </div>
+                                <div class="flip-card-content">
+                                    <span class="badge">Espagne</span>
+                                    <h3>Paella Valenciana</h3>
+                                    <p>Le soleil d'Espagne dans un plat de riz safrané.</p>
+                                </div>
+                            </div>
+                            <div class="flip-card-back">
+                                <h4>Ingrédients</h4>
+                                <ul>
+                                    <li>Riz Bomba, Safran</li>
+                                    <li>Lapin, poulet, haricots</li>
+                                    <li>Bouillon de viande</li>
+                                    <li>Tomates, pimentón</li>
+                                </ul>
+                                <h4>Recette</h4>
+                                <p>Faire dorer les viandes. Ajouter légumes et tomate. Verser le bouillon et le safran. Ajouter le riz uniformément. Cuire sans remuer jusqu'à absorption.</p>
+                            </div>
                         </div>
                     </article>
-                    <article class="card card-europe fade-in">
-                        <div class="card-img">
-                            <img src="images/pierogi.jpg" alt="Pierogi">
-                        </div>
-                        <div class="card-body">
-                            <span class="badge badge-europe">Pologne</span>
-                            <h3>Pierogi</h3>
-                            <p>Raviolis farcis de pomme de terre, fromage ou viande.</p>
+
+                    <!-- Plat 3: Croissant -->
+                    <article class="flip-card fade-in">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <div class="flip-card-img">
+                                    <img src="images/croissant.jpg" alt="Croissant">
+                                </div>
+                                <div class="flip-card-content">
+                                    <span class="badge">France</span>
+                                    <h3>Croissant pur Beurre</h3>
+                                    <p>Le symbole du petit-déjeuner français par excellence.</p>
+                                </div>
+                            </div>
+                            <div class="flip-card-back">
+                                <h4>Ingrédients</h4>
+                                <ul>
+                                    <li>Farine de blé, levure</li>
+                                    <li>Beurre de haute qualité</li>
+                                    <li>Lait, sucre, sel</li>
+                                    <li>Jaune d'œuf pour la dorure</li>
+                                </ul>
+                                <h4>Recette</h4>
+                                <p>Préparer une pâte levée. Incorporer le beurre par pliages successifs (tourage). Découper des triangles, rouler et laisser pousser. Cuire au four 15-20 min.</p>
+                            </div>
                         </div>
                     </article>
-                    <article class="card card-europe fade-in">
-                        <div class="card-img">
-                            <img src="images/tarte-flambee.jpg" alt="Tarte flambée">
+
+                    <!-- Plat 4: Moussaka -->
+                    <article class="flip-card fade-in">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <div class="flip-card-img">
+                                    <img src="images/moussaka.jpg" alt="Moussaka">
+                                </div>
+                                <div class="flip-card-content">
+                                    <span class="badge">Grèce</span>
+                                    <h3>Moussaka</h3>
+                                    <p>Gratin d'aubergines et d'agneau sous une béchamel fondante.</p>
+                                </div>
+                            </div>
+                            <div class="flip-card-back">
+                                <h4>Ingrédients</h4>
+                                <ul>
+                                    <li>Aubergines, pommes de terre</li>
+                                    <li>Agneau haché, tomates</li>
+                                    <li>Cannelle, oignon, ail</li>
+                                    <li>Béchamel au fromage</li>
+                                </ul>
+                                <h4>Recette</h4>
+                                <p>Frire les tranches d'aubergines. Mijoter la viande avec les épices. Superposer les couches. Recouvrir de béchamel et gratiner au four 45 min.</p>
+                            </div>
                         </div>
-                        <div class="card-body">
-                            <span class="badge badge-europe">France (Alsace)</span>
-                            <h3>Tarte flambée</h3>
-                            <p>Pâte fine garnie de crème fraîche, oignons et lardons, cuite au four.</p>
+                    </article>
+
+                    <!-- Plat 5: Goulash -->
+                    <article class="flip-card fade-in">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <div class="flip-card-img">
+                                    <img src="images/goulash.jpg" alt="Goulash">
+                                </div>
+                                <div class="flip-card-content">
+                                    <span class="badge">Hongrie</span>
+                                    <h3>Goulash Hongrois</h3>
+                                    <p>Un ragoût de bœuf généreux relevé au paprika.</p>
+                                </div>
+                            </div>
+                            <div class="flip-card-back">
+                                <h4>Ingrédients</h4>
+                                <ul>
+                                    <li>Bœuf à braiser, oignons</li>
+                                    <li>Paprika de qualité</li>
+                                    <li>Poivrons rouges, tomates</li>
+                                    <li>Graines de carvi, ail</li>
+                                </ul>
+                                <h4>Recette</h4>
+                                <p>Suer les oignons. Ajouter la viande et le paprika. Mouiller avec un peu de bouillon. Ajouter les poivrons. Laisser mijoter doucement pendant 2h30.</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Plat 6: Fish and Chips -->
+                    <article class="flip-card fade-in">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <div class="flip-card-img">
+                                    <img src="images/fish-and-chips.jpg" alt="Fish and Chips">
+                                </div>
+                                <div class="flip-card-content">
+                                    <span class="badge">Royaume-Uni</span>
+                                    <h3>Fish and Chips</h3>
+                                    <p>Poisson frais pané à la bière et frites croustillantes.</p>
+                                </div>
+                            </div>
+                            <div class="flip-card-back">
+                                <h4>Ingrédients</h4>
+                                <ul>
+                                    <li>Filets de cabillaud frais</li>
+                                    <li>Farine, levure, bière</li>
+                                    <li>Pommes de terre à frites</li>
+                                    <li>Sauce tartare, vinaigre</li>
+                                </ul>
+                                <h4>Recette</h4>
+                                <p>Préparer une pâte à frire avec la bière. Tremper le poisson et frire jusqu'à dorure. Frire les pommes de terre en deux bains. Servir avec du vinaigre de malt.</p>
+                            </div>
                         </div>
                     </article>
                 </div>
@@ -135,7 +216,7 @@
                 <a href="europe.html">Europe</a>
                 <a href="amerique.html">Amérique</a>
             </nav>
-            <p class="copyright">Projet scolaire – Saveurs du Monde &copy; 2023</p>
+            <p class="copyright">Saveurs du Monde &copy; 2023 – Voyage Gastronomique</p>
         </div>
     </footer>
 

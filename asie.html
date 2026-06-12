@@ -6,7 +6,7 @@
     <title>Saveurs du Monde | Asie</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="page-asie">
     <header>
         <div class="container nav-container">
             <a href="index.html" class="logo">Saveurs du Monde</a>
@@ -18,7 +18,7 @@
                     <li><a href="europe.html" class="nav-link">Europe</a></li>
                     <li><a href="amerique.html" class="nav-link">Amérique</a></li>
                 </ul>
-                <button class="hamburger">
+                <button class="hamburger" aria-label="Menu">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -28,10 +28,10 @@
     </header>
 
     <main>
-        <section class="hero hero-asie">
+        <section class="hero hero-asie" style="background-image: url('images/hero-asie.jpg');">
             <div class="container hero-content">
-                <h1 class="fade-in">Asie</h1>
-                <p class="fade-in">La cuisine asiatique séduit par son équilibre entre fraîcheur, épices et techniques ancestrales. Entre les saveurs umami du Japon, les currys parfumés de l'Inde et les soupes réconfortantes du Vietnam, chaque bouchée est une découverte.</p>
+                <h1 class="fade-in">L'Asie Mystique</h1>
+                <p class="fade-in">Un équilibre parfait entre fraîcheur, piquant et douceur. Découvrez les trésors de l'Orient, du Japon au Vietnam.</p>
             </div>
         </section>
 
@@ -39,86 +39,167 @@
             <div class="blob blob-1"></div>
             <div class="blob blob-2"></div>
             <div class="container">
-                <h2 class="section-title fade-in">Spécialités locales</h2>
+                <h2 class="section-title fade-in">Spécialités Continentales</h2>
                 <div class="grid">
-                    <article class="card card-asie fade-in">
-                        <div class="card-img">
-                            <img src="images/sushi.jpg" alt="Sushi">
-                        </div>
-                        <div class="card-body">
-                            <span class="badge badge-asie">Japon</span>
-                            <h3>Sushi</h3>
-                            <p>Riz vinaigré accompagné de poisson cru ou de légumes, roulé dans une feuille d'algue.</p>
-                        </div>
-                    </article>
-                    <article class="card card-asie fade-in">
-                        <div class="card-img">
-                            <img src="images/pad-thai.jpg" alt="Pad Thai">
-                        </div>
-                        <div class="card-body">
-                            <span class="badge badge-asie">Thaïlande</span>
-                            <h3>Pad Thai</h3>
-                            <p>Nouilles de riz sautées avec crevettes, œuf, cacahuètes et tamarin.</p>
-                        </div>
-                    </article>
-                    <article class="card card-asie fade-in">
-                        <div class="card-img">
-                            <img src="images/curry.jpg" alt="Curry">
-                        </div>
-                        <div class="card-body">
-                            <span class="badge badge-asie">Inde</span>
-                            <h3>Curry</h3>
-                            <p>Plat mijoté épicé à base de légumes, viande ou légumineuses, servi avec du riz.</p>
+                    <!-- Plat 1: Sushi -->
+                    <article class="flip-card fade-in">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <div class="flip-card-img">
+                                    <img src="images/sushi.jpg" alt="Sushi">
+                                </div>
+                                <div class="flip-card-content">
+                                    <span class="badge">Japon</span>
+                                    <h3>Sushi Nigiri</h3>
+                                    <p>L'élégance du poisson cru sur un lit de riz vinaigré.</p>
+                                </div>
+                            </div>
+                            <div class="flip-card-back">
+                                <h4>Ingrédients</h4>
+                                <ul>
+                                    <li>Riz rond japonais, vinaigre</li>
+                                    <li>Saumon ou thon ultra-frais</li>
+                                    <li>Wasabi, sauce soja</li>
+                                    <li>Gingembre mariné</li>
+                                </ul>
+                                <h4>Recette</h4>
+                                <p>Laver et cuire le riz. Assaisonner de vinaigre. Former des petites boules de riz. Placer une noisette de wasabi et une fine tranche de poisson par-dessus.</p>
+                            </div>
                         </div>
                     </article>
-                    <article class="card card-asie fade-in">
-                        <div class="card-img">
-                            <img src="images/ramen.jpg" alt="Ramen">
-                        </div>
-                        <div class="card-body">
-                            <span class="badge badge-asie">Japon</span>
-                            <h3>Ramen</h3>
-                            <p>Soupe de nouilles dans un bouillon riche, garnie d'œuf, porc et légumes.</p>
-                        </div>
-                    </article>
-                    <article class="card card-asie fade-in">
-                        <div class="card-img">
-                            <img src="images/dim-sum.jpg" alt="Dim Sum">
-                        </div>
-                        <div class="card-body">
-                            <span class="badge badge-asie">Chine</span>
-                            <h3>Dim Sum</h3>
-                            <p>Petites bouchées vapeur ou frites, farcies de viande, crevette ou légumes.</p>
-                        </div>
-                    </article>
-                    <article class="card card-asie fade-in">
-                        <div class="card-img">
-                            <img src="images/pho.jpg" alt="Pho">
-                        </div>
-                        <div class="card-body">
-                            <span class="badge badge-asie">Vietnam</span>
-                            <h3>Pho</h3>
-                            <p>Soupe de nouilles de riz au bouillon parfumé, bœuf ou poulet et herbes fraîches.</p>
+
+                    <!-- Plat 2: Pad Thai -->
+                    <article class="flip-card fade-in">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <div class="flip-card-img">
+                                    <img src="images/pad-thai.jpg" alt="Pad Thai">
+                                </div>
+                                <div class="flip-card-content">
+                                    <span class="badge">Thaïlande</span>
+                                    <h3>Pad Thai</h3>
+                                    <p>Nouilles sautées iconiques, mélange de croquant et d'acidulé.</p>
+                                </div>
+                            </div>
+                            <div class="flip-card-back">
+                                <h4>Ingrédients</h4>
+                                <ul>
+                                    <li>Nouilles de riz, crevettes</li>
+                                    <li>Pâte de tamarin, cacahuètes</li>
+                                    <li>Œufs, germes de soja</li>
+                                    <li>Citron vert, sauce poisson</li>
+                                </ul>
+                                <h4>Recette</h4>
+                                <p>Sauter les crevettes. Ajouter les nouilles réhydratées. Verser la sauce tamarin. Ajouter les œufs et mélanger. Garnir de cacahuètes et de citron vert.</p>
+                            </div>
                         </div>
                     </article>
-                    <article class="card card-asie fade-in">
-                        <div class="card-img">
-                            <img src="images/bibimbap.jpg" alt="Bibimbap">
-                        </div>
-                        <div class="card-body">
-                            <span class="badge badge-asie">Corée du Sud</span>
-                            <h3>Bibimbap</h3>
-                            <p>Bol de riz garni de légumes, viande, œuf et sauce piquante, à mélanger avant dégustation.</p>
+
+                    <!-- Plat 3: Curry -->
+                    <article class="flip-card fade-in">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <div class="flip-card-img">
+                                    <img src="images/curry.jpg" alt="Butter Chicken">
+                                </div>
+                                <div class="flip-card-content">
+                                    <span class="badge">Inde</span>
+                                    <h3>Butter Chicken</h3>
+                                    <p>Poulet onctueux dans une sauce tomate et beurre parfumée.</p>
+                                </div>
+                            </div>
+                            <div class="flip-card-back">
+                                <h4>Ingrédients</h4>
+                                <ul>
+                                    <li>Poulet mariné au yaourt</li>
+                                    <li>Garam Masala, curcuma</li>
+                                    <li>Purée de tomate, crème</li>
+                                    <li>Beurre, ail, gingembre</li>
+                                </ul>
+                                <h4>Recette</h4>
+                                <p>Griller le poulet mariné. Préparer une sauce avec tomate, beurre et épices. Ajouter la crème. Laisser mijoter le poulet dans la sauce 15 min.</p>
+                            </div>
                         </div>
                     </article>
-                    <article class="card card-asie fade-in">
-                        <div class="card-img">
-                            <img src="images/rendang.jpg" alt="Rendang">
+
+                    <!-- Plat 4: Ramen -->
+                    <article class="flip-card fade-in">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <div class="flip-card-img">
+                                    <img src="images/ramen.jpg" alt="Ramen">
+                                </div>
+                                <div class="flip-card-content">
+                                    <span class="badge">Japon</span>
+                                    <h3>Ramen Tonkotsu</h3>
+                                    <p>Soupe de nouilles dans un bouillon crémeux de porc.</p>
+                                </div>
+                            </div>
+                            <div class="flip-card-back">
+                                <h4>Ingrédients</h4>
+                                <ul>
+                                    <li>Nouilles ramen fraîches</li>
+                                    <li>Bouillon d'os de porc</li>
+                                    <li>Tranches de porc (Chashu)</li>
+                                    <li>Œuf mollet mariné, algues</li>
+                                </ul>
+                                <h4>Recette</h4>
+                                <p>Cuire les nouilles. Verser le bouillon brûlant. Disposer le porc, l'œuf, les oignons verts et l'algue nori. Servir immédiatement très chaud.</p>
+                            </div>
                         </div>
-                        <div class="card-body">
-                            <span class="badge badge-asie">Indonésie</span>
-                            <h3>Rendang</h3>
-                            <p>Viande de bœuf mijotée longuement dans du lait de coco et des épices.</p>
+                    </article>
+
+                    <!-- Plat 5: Dim Sum -->
+                    <article class="flip-card fade-in">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <div class="flip-card-img">
+                                    <img src="images/dim-sum.jpg" alt="Dim Sum">
+                                </div>
+                                <div class="flip-card-content">
+                                    <span class="badge">Chine</span>
+                                    <h3>Dim Sum (Siu Mai)</h3>
+                                    <p>Bouchées vapeur raffinées à la crevette et au porc.</p>
+                                </div>
+                            </div>
+                            <div class="flip-card-back">
+                                <h4>Ingrédients</h4>
+                                <ul>
+                                    <li>Pâte à raviolis fine</li>
+                                    <li>Crevettes hachées, porc</li>
+                                    <li>Champignons shiitake</li>
+                                    <li>Huile de sésame, soja</li>
+                                </ul>
+                                <h4>Recette</h4>
+                                <p>Mélanger la farce. Garnir les disques de pâte en laissant le haut ouvert. Cuire à la vapeur dans des paniers en bambou pendant 8-10 min.</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Plat 6: Pho -->
+                    <article class="flip-card fade-in">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <div class="flip-card-img">
+                                    <img src="images/pho.jpg" alt="Pho">
+                                </div>
+                                <div class="flip-card-content">
+                                    <span class="badge">Vietnam</span>
+                                    <h3>Phô Bò</h3>
+                                    <p>Soupe de nouilles au bœuf, l'âme aromatique du Vietnam.</p>
+                                </div>
+                            </div>
+                            <div class="flip-card-back">
+                                <h4>Ingrédients</h4>
+                                <ul>
+                                    <li>Bouillon de bœuf, anis étoilé</li>
+                                    <li>Nouilles de riz, bœuf émincé</li>
+                                    <li>Coriandre, menthe, basilic</li>
+                                    <li>Oignons, piment, citron</li>
+                                </ul>
+                                <h4>Recette</h4>
+                                <p>Mijoter le bouillon avec les épices. Cuire les nouilles. Placer le bœuf cru sur les nouilles, verser le bouillon bouillant pour le cuire. Ajouter les herbes.</p>
+                            </div>
                         </div>
                     </article>
                 </div>
@@ -135,7 +216,7 @@
                 <a href="europe.html">Europe</a>
                 <a href="amerique.html">Amérique</a>
             </nav>
-            <p class="copyright">Projet scolaire – Saveurs du Monde &copy; 2023</p>
+            <p class="copyright">Saveurs du Monde &copy; 2023 – Voyage Gastronomique</p>
         </div>
     </footer>
 
