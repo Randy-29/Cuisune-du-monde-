@@ -3,205 +3,243 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Saveurs du Monde | Europe</title>
+    <title>Europe | Saveurs du Monde</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body class="page-europe">
+
     <header>
         <div class="container nav-container">
             <a href="index.html" class="logo">Saveurs du Monde</a>
-            <nav>
+            <nav><div class="menu-toggle" id="mobile-menu"><span></span><span></span><span></span></div>
                 <ul class="nav-menu">
                     <li><a href="index.html" class="nav-link">Accueil</a></li>
                     <li><a href="afrique.html" class="nav-link">Afrique</a></li>
                     <li><a href="asie.html" class="nav-link">Asie</a></li>
-                    <li><a href="europe.html" class="nav-link">Europe</a></li>
-                    <li><a href="amerique.html" class="nav-link">Amérique</a></li>
+                    <li><a href="europe.html" class="nav-link active">Europe</a></li>
+                    <li><a href="ameriques.html" class="nav-link">Amériques</a></li>
                 </ul>
-                <button class="hamburger" aria-label="Menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
             </nav>
         </div>
     </header>
 
     <main>
-        <section class="hero hero-europe" style="background-image: url('images/hero-europe.jpg');">
-            <div class="container hero-content">
-                <h1 class="fade-in">L'Europe Gourmande</h1>
-                <p class="fade-in">Du raffinement français à la générosité méditerranéenne, redécouvrez le berceau de la gastronomie.</p>
+        <section class="continent-hero" style="background-image: url('https://images.unsplash.com/photo-1512413316925-fd4793431999?q=80&w=2070&auto=format&fit=crop');">
+            <div class="container">
+                <h1>Europe</h1>
+                <blockquote>"Le respect profond du terroir et des traditions régionales."</blockquote>
             </div>
         </section>
 
-        <section class="blob-container" style="padding: 80px 0;">
-            <div class="blob blob-1"></div>
-            <div class="blob blob-2"></div>
+        <section class="recipes">
             <div class="container">
-                <h2 class="section-title fade-in">Spécialités Continentales</h2>
-                <div class="grid">
-                    <!-- Plat 1: Pizza -->
-                    <article class="flip-card fade-in">
-                        <div class="flip-card-inner">
-                            <div class="flip-card-front">
-                                <div class="flip-card-img">
-                                    <img src="images/pizza.jpg" alt="Pizza">
+                <div class="recipe-grid">
+
+                    <!-- Recipe 1 -->
+                    <article class="recipe-card">
+                        <div class="recipe-card-inner">
+                            <div class="recipe-card-front">
+                                <div class="recipe-img-container">
+                                    <img src="https://placehold.co/600x400.jpg?text=France+Coq+au+Vin" alt="Coq au Vin">
                                 </div>
-                                <div class="flip-card-content">
-                                    <span class="badge">Italie</span>
-                                    <h3>Pizza Margherita</h3>
-                                    <p>La simplicité royale : tomate, mozzarella et basilic.</p>
+                                <div class="recipe-info">
+                                    <div class="recipe-meta">France • Difficile • 2h30</div>
+                                    <h3>Coq au Vin</h3>
+                                    <span class="recipe-origin">Symbole de la gastronomie française.</span>
+                                    <div class="flip-hint"><i class="fa-solid fa-rotate"></i> Cliquez pour voir la recette</div>
                                 </div>
                             </div>
-                            <div class="flip-card-back">
+                            <div class="recipe-card-back">
                                 <h4>Ingrédients</h4>
                                 <ul>
-                                    <li>Pâte à pizza artisanale</li>
-                                    <li>Tomates San Marzano</li>
-                                    <li>Mozzarella di Bufala</li>
-                                    <li>Basilic frais, huile d'olive</li>
+                                    <li>1 coq découpé</li>
+                                    <li>Vin rouge (Bourgogne)</li>
+                                    <li>Lardons, Champignons</li>
+                                    <li>Oignons grelots, Cognac</li>
                                 </ul>
-                                <h4>Recette</h4>
-                                <p>Étaler la pâte. Garnir de tomate et mozzarella. Cuire à très haute température (400°C) pendant 90 secondes. Ajouter le basilic à la sortie du four.</p>
+                                <h4>Étapes</h4>
+                                <ol>
+                                    <li>Mariner le coq 12h.</li>
+                                    <li>Dorer et flamber au cognac.</li>
+                                    <li>Mijoter 1h30 avec le vin.</li>
+                                    <li>Réduire la sauce à la fin.</li>
+                                </ol>
+                                <button class="btn-flip-back">Retourner</button>
                             </div>
                         </div>
                     </article>
 
-                    <!-- Plat 2: Paella -->
-                    <article class="flip-card fade-in">
-                        <div class="flip-card-inner">
-                            <div class="flip-card-front">
-                                <div class="flip-card-img">
-                                    <img src="images/paella.jpg" alt="Paella">
+                    <!-- Recipe 2 -->
+                    <article class="recipe-card">
+                        <div class="recipe-card-inner">
+                            <div class="recipe-card-front">
+                                <div class="recipe-img-container">
+                                    <img src="https://placehold.co/600x400.jpg?text=Italy+Risotto" alt="Risotto">
                                 </div>
-                                <div class="flip-card-content">
-                                    <span class="badge">Espagne</span>
-                                    <h3>Paella Valenciana</h3>
-                                    <p>Le soleil d'Espagne dans un plat de riz safrané.</p>
+                                <div class="recipe-info">
+                                    <div class="recipe-meta">Italie • Moyen • 30min</div>
+                                    <h3>Risotto aux Cèpes</h3>
+                                    <span class="recipe-origin">Onctuosité et parfum des sous-bois.</span>
+                                    <div class="flip-hint"><i class="fa-solid fa-rotate"></i> Cliquez pour voir la recette</div>
                                 </div>
                             </div>
-                            <div class="flip-card-back">
+                            <div class="recipe-card-back">
+                                <h4>Ingrédients</h4>
+                                <ul>
+                                    <li>Riz Carnaroli</li>
+                                    <li>Cèpes, Vin blanc</li>
+                                    <li>Bouillon de légumes</li>
+                                    <li>Parmesan, Beurre</li>
+                                </ul>
+                                <h4>Étapes</h4>
+                                <ol>
+                                    <li>Nacrer le riz à l'oignon.</li>
+                                    <li>Déglaver au vin blanc.</li>
+                                    <li>Ajouter bouillon progressivement.</li>
+                                    <li>Lier au parmesan et beurre.</li>
+                                </ol>
+                                <button class="btn-flip-back">Retourner</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Recipe 3 -->
+                    <article class="recipe-card">
+                        <div class="recipe-card-inner">
+                            <div class="recipe-card-front">
+                                <div class="recipe-img-container">
+                                    <img src="https://placehold.co/600x400.jpg?text=Spain+Paella" alt="Paella">
+                                </div>
+                                <div class="recipe-info">
+                                    <div class="recipe-meta">Espagne • Difficile • 1h</div>
+                                    <h3>Paella Valenciana</h3>
+                                    <span class="recipe-origin">Le soleil dans une paellera.</span>
+                                    <div class="flip-hint"><i class="fa-solid fa-rotate"></i> Cliquez pour voir la recette</div>
+                                </div>
+                            </div>
+                            <div class="recipe-card-back">
                                 <h4>Ingrédients</h4>
                                 <ul>
                                     <li>Riz Bomba, Safran</li>
-                                    <li>Lapin, poulet, haricots</li>
-                                    <li>Bouillon de viande</li>
-                                    <li>Tomates, pimentón</li>
+                                    <li>Poulet, Lapin</li>
+                                    <li>Haricots plats, Tomate</li>
+                                    <li>Paprika fumé</li>
                                 </ul>
-                                <h4>Recette</h4>
-                                <p>Faire dorer les viandes. Ajouter légumes et tomate. Verser le bouillon et le safran. Ajouter le riz uniformément. Cuire sans remuer jusqu'à absorption.</p>
+                                <h4>Étapes</h4>
+                                <ol>
+                                    <li>Dorer les viandes.</li>
+                                    <li>Ajouter tomate et bouillon safrané.</li>
+                                    <li>Verser le riz, ne plus remuer.</li>
+                                    <li>Cuire 20min jusqu'au socarrat.</li>
+                                </ol>
+                                <button class="btn-flip-back">Retourner</button>
                             </div>
                         </div>
                     </article>
 
-                    <!-- Plat 3: Croissant -->
-                    <article class="flip-card fade-in">
-                        <div class="flip-card-inner">
-                            <div class="flip-card-front">
-                                <div class="flip-card-img">
-                                    <img src="images/croissant.jpg" alt="Croissant">
+                    <!-- Recipe 4 -->
+                    <article class="recipe-card">
+                        <div class="recipe-card-inner">
+                            <div class="recipe-card-front">
+                                <div class="recipe-img-container">
+                                    <img src="https://placehold.co/600x400.jpg?text=Greece+Moussaka" alt="Moussaka">
                                 </div>
-                                <div class="flip-card-content">
-                                    <span class="badge">France</span>
-                                    <h3>Croissant pur Beurre</h3>
-                                    <p>Le symbole du petit-déjeuner français par excellence.</p>
-                                </div>
-                            </div>
-                            <div class="flip-card-back">
-                                <h4>Ingrédients</h4>
-                                <ul>
-                                    <li>Farine de blé, levure</li>
-                                    <li>Beurre de haute qualité</li>
-                                    <li>Lait, sucre, sel</li>
-                                    <li>Jaune d'œuf pour la dorure</li>
-                                </ul>
-                                <h4>Recette</h4>
-                                <p>Préparer une pâte levée. Incorporer le beurre par pliages successifs (tourage). Découper des triangles, rouler et laisser pousser. Cuire au four 15-20 min.</p>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Plat 4: Moussaka -->
-                    <article class="flip-card fade-in">
-                        <div class="flip-card-inner">
-                            <div class="flip-card-front">
-                                <div class="flip-card-img">
-                                    <img src="images/moussaka.jpg" alt="Moussaka">
-                                </div>
-                                <div class="flip-card-content">
-                                    <span class="badge">Grèce</span>
+                                <div class="recipe-info">
+                                    <div class="recipe-meta">Grèce • Moyen • 1h30</div>
                                     <h3>Moussaka</h3>
-                                    <p>Gratin d'aubergines et d'agneau sous une béchamel fondante.</p>
+                                    <span class="recipe-origin">Gratin d'aubergines et bœuf.</span>
+                                    <div class="flip-hint"><i class="fa-solid fa-rotate"></i> Cliquez pour voir la recette</div>
                                 </div>
                             </div>
-                            <div class="flip-card-back">
+                            <div class="recipe-card-back">
                                 <h4>Ingrédients</h4>
                                 <ul>
-                                    <li>Aubergines, pommes de terre</li>
-                                    <li>Agneau haché, tomates</li>
-                                    <li>Cannelle, oignon, ail</li>
-                                    <li>Béchamel au fromage</li>
+                                    <li>Aubergines</li>
+                                    <li>Bœuf haché, Tomates</li>
+                                    <li>Béchamel, Fromage</li>
+                                    <li>Cannelle, Origan</li>
                                 </ul>
-                                <h4>Recette</h4>
-                                <p>Frire les tranches d'aubergines. Mijoter la viande avec les épices. Superposer les couches. Recouvrir de béchamel et gratiner au four 45 min.</p>
+                                <h4>Étapes</h4>
+                                <ol>
+                                    <li>Dorer les tranches d'aubergines.</li>
+                                    <li>Mijoter la viande parfumée.</li>
+                                    <li>Monter le plat par couches.</li>
+                                    <li>Griller au four 45min.</li>
+                                </ol>
+                                <button class="btn-flip-back">Retourner</button>
                             </div>
                         </div>
                     </article>
 
-                    <!-- Plat 5: Goulash -->
-                    <article class="flip-card fade-in">
-                        <div class="flip-card-inner">
-                            <div class="flip-card-front">
-                                <div class="flip-card-img">
-                                    <img src="images/goulash.jpg" alt="Goulash">
+                    <!-- Recipe 5 -->
+                    <article class="recipe-card">
+                        <div class="recipe-card-inner">
+                            <div class="recipe-card-front">
+                                <div class="recipe-img-container">
+                                    <img src="https://placehold.co/600x400.jpg?text=Hungary+Goulash" alt="Goulash">
                                 </div>
-                                <div class="flip-card-content">
-                                    <span class="badge">Hongrie</span>
-                                    <h3>Goulash Hongrois</h3>
-                                    <p>Un ragoût de bœuf généreux relevé au paprika.</p>
+                                <div class="recipe-info">
+                                    <div class="recipe-meta">Hongrie • Moyen • 2h30</div>
+                                    <h3>Goulash</h3>
+                                    <span class="recipe-origin">Ragoût de bœuf au paprika.</span>
+                                    <div class="flip-hint"><i class="fa-solid fa-rotate"></i> Cliquez pour voir la recette</div>
                                 </div>
                             </div>
-                            <div class="flip-card-back">
+                            <div class="recipe-card-back">
                                 <h4>Ingrédients</h4>
                                 <ul>
-                                    <li>Bœuf à braiser, oignons</li>
-                                    <li>Paprika de qualité</li>
-                                    <li>Poivrons rouges, tomates</li>
-                                    <li>Graines de carvi, ail</li>
+                                    <li>Bœuf, Oignons</li>
+                                    <li>Paprika hongrois, Carvi</li>
+                                    <li>Poivrons, Tomates</li>
+                                    <li>Pommes de terre</li>
                                 </ul>
-                                <h4>Recette</h4>
-                                <p>Suer les oignons. Ajouter la viande et le paprika. Mouiller avec un peu de bouillon. Ajouter les poivrons. Laisser mijoter doucement pendant 2h30.</p>
+                                <h4>Étapes</h4>
+                                <ol>
+                                    <li>Caraméliser les oignons.</li>
+                                    <li>Ajouter la viande et le paprika.</li>
+                                    <li>Mijoter 2h à feu doux.</li>
+                                    <li>Ajouter les pommes de terre (30min).</li>
+                                </ol>
+                                <button class="btn-flip-back">Retourner</button>
                             </div>
                         </div>
                     </article>
 
-                    <!-- Plat 6: Fish and Chips -->
-                    <article class="flip-card fade-in">
-                        <div class="flip-card-inner">
-                            <div class="flip-card-front">
-                                <div class="flip-card-img">
-                                    <img src="images/fish-and-chips.jpg" alt="Fish and Chips">
+                    <!-- Recipe 6 -->
+                    <article class="recipe-card">
+                        <div class="recipe-card-inner">
+                            <div class="recipe-card-front">
+                                <div class="recipe-img-container">
+                                    <img src="https://placehold.co/600x400.jpg?text=UK+Fish+Chips" alt="Fish and Chips">
                                 </div>
-                                <div class="flip-card-content">
-                                    <span class="badge">Royaume-Uni</span>
+                                <div class="recipe-info">
+                                    <div class="recipe-meta">Royaume-Uni • Moyen • 45min</div>
                                     <h3>Fish and Chips</h3>
-                                    <p>Poisson frais pané à la bière et frites croustillantes.</p>
+                                    <span class="recipe-origin">Poisson pané et frites.</span>
+                                    <div class="flip-hint"><i class="fa-solid fa-rotate"></i> Cliquez pour voir la recette</div>
                                 </div>
                             </div>
-                            <div class="flip-card-back">
+                            <div class="recipe-card-back">
                                 <h4>Ingrédients</h4>
                                 <ul>
-                                    <li>Filets de cabillaud frais</li>
-                                    <li>Farine, levure, bière</li>
-                                    <li>Pommes de terre à frites</li>
-                                    <li>Sauce tartare, vinaigre</li>
+                                    <li>Filets de poisson blanc</li>
+                                    <li>Farine, Bière blonde</li>
+                                    <li>Pommes de terre</li>
+                                    <li>Petits pois, Menthe</li>
                                 </ul>
-                                <h4>Recette</h4>
-                                <p>Préparer une pâte à frire avec la bière. Tremper le poisson et frire jusqu'à dorure. Frire les pommes de terre en deux bains. Servir avec du vinaigre de malt.</p>
+                                <h4>Étapes</h4>
+                                <ol>
+                                    <li>Préparer la pâte à la bière.</li>
+                                    <li>Frire les frites en deux bains.</li>
+                                    <li>Enrober le poisson et frire.</li>
+                                    <li>Servir avec sauce tartare.</li>
+                                </ol>
+                                <button class="btn-flip-back">Retourner</button>
                             </div>
                         </div>
                     </article>
+
                 </div>
             </div>
         </section>
@@ -209,17 +247,12 @@
 
     <footer>
         <div class="container">
-            <nav class="footer-nav">
-                <a href="index.html">Accueil</a>
-                <a href="afrique.html">Afrique</a>
-                <a href="asie.html">Asie</a>
-                <a href="europe.html">Europe</a>
-                <a href="amerique.html">Amérique</a>
-            </nav>
-            <p class="copyright">Saveurs du Monde &copy; 2023 – Voyage Gastronomique</p>
+            <p>Saveurs du Monde &copy; 2023</p>
         </div>
     </footer>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>

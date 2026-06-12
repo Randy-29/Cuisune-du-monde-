@@ -1,29 +1,25 @@
 /* Importation des polices Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Nunito:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@100..900&display=swap');
 
-/* Variables CSS pour les couleurs et la typographie */
+/* Variables CSS pour le nouveau design system */
 :root {
-    --primary-orange: #ff8c42;
-    --primary-yellow: #ffcf33;
-    --primary-green: #2ab7ca;
-    --primary-coral: #fe4a49;
-    --background-cream: #fffaf0;
-    --text-dark: #333333;
-    --white: #ffffff;
-    --gray-light: #f4f4f4;
+    --bg-primary: #FAFAF7;
+    --text-primary: #1A1A1A;
+    --text-secondary: #6B6B6B;
+    --white: #FFFFFF;
 
-    /* Couleurs par continent (Tons épicés) */
-    --color-afrique: #d35400; /* Terracotta */
-    --color-asie: #27ae60;    /* Vert Émeraude */
-    --color-europe: #2980b9;  /* Bleu Méditerranée */
-    --color-amerique: #c0392b; /* Rouge Piment */
+    /* Accents par continent (Pastel subtil) */
+    --accent-afrique: #D4A574;
+    --accent-asie: #C75B39;
+    --accent-europe: #4A6741;
+    --accent-ameriques: #2E6B5E;
 
-    --font-title: 'Baloo 2', cursive;
-    --font-body: 'Nunito', sans-serif;
+    --font-title: 'Playfair Display', serif;
+    --font-body: 'Inter', sans-serif;
 
-    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    --shadow-light: 0 4px 15px rgba(0, 0, 0, 0.1);
-    --shadow-hover: 0 15px 35px rgba(0, 0, 0, 0.2);
+    --transition-base: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --shadow-soft: 0 4px 24px rgba(0, 0, 0, 0.06);
+    --shadow-hover: 0 12px 32px rgba(0, 0, 0, 0.12);
 }
 
 /* Reset de base */
@@ -35,80 +31,88 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body {
     font-family: var(--font-body);
-    background-color: var(--background-cream);
-    /* Ajout d'une texture légère pour un aspect papier/artisanal */
-    background-image: url("https://www.transparenttextures.com/patterns/papyros.png");
-    color: var(--text-dark);
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
     line-height: 1.6;
-    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
 }
 
-/* Titres */
+/* Typographie */
 h1, h2, h3, h4 {
     font-family: var(--font-title);
-    font-weight: 800;
+    font-weight: 700;
+}
+
+p {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
 }
 
 a {
     text-decoration: none;
     color: inherit;
-    transition: var(--transition-smooth);
+    transition: var(--transition-base);
 }
 
-ul {
-    list-style: none;
-}
-
-img {
-    max-width: 100%;
-    display: block;
+/* Whitespace généreux */
+section {
+    padding: 120px 0;
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1300px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 40px;
 }
 
-/* Boutons */
-.btn {
-    display: inline-block;
-    padding: 12px 30px;
-    border-radius: 50px;
+/* --- Loading Screen --- */
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    transition: opacity 0.5s ease-out;
+}
+
+.loader-logo {
     font-family: var(--font-title);
-    font-weight: 600;
-    font-size: 1.1rem;
-    cursor: pointer;
-    border: none;
-    transition: var(--transition-smooth);
-    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 800;
+    animation: pulse 1.5s infinite ease-in-out;
 }
 
-.btn-primary {
-    background-color: var(--primary-orange);
-    color: var(--white);
-    box-shadow: 0 4px 10px rgba(255, 140, 66, 0.3);
-}
-
-.btn-primary:hover {
-    background-color: var(--primary-coral);
-    transform: translateY(-3px);
-    box-shadow: 0 6px 15px rgba(254, 74, 73, 0.4);
+@keyframes pulse {
+    0%, 100% { opacity: 0.4; transform: scale(0.95); }
+    50% { opacity: 1; transform: scale(1); }
 }
 
 /* --- Header & Navigation --- */
 header {
-    background-color: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(5px);
-    padding: 15px 0;
-    box-shadow: var(--shadow-light);
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 0;
     z-index: 1000;
+    transition: var(--transition-base);
+}
+
+header.scrolled {
+    padding: 15px 0;
+    background-color: rgba(250, 250, 247, 0.8);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(0,0,0,0.05);
 }
 
 .nav-container {
@@ -119,19 +123,66 @@ header {
 
 .logo {
     font-family: var(--font-title);
-    font-size: 1.8rem;
-    color: var(--primary-coral);
+    font-size: 1.6rem;
     font-weight: 800;
 }
 
 .nav-menu {
     display: flex;
-    gap: 30px;
+    gap: 40px;
+}
+
+/* Mobile Menu Toggle */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+    z-index: 1100;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 28px;
+    height: 2px;
+    background-color: var(--text-primary);
+    transition: var(--transition-base);
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        height: 100vh;
+        background: var(--bg-primary);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 32px;
+        transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: -10px 0 30px rgba(0,0,0,0.05);
+    }
+
+    .nav-menu.active {
+        right: 0;
+    }
+
+    .nav-link {
+        font-size: 1.2rem;
+    }
 }
 
 .nav-link {
-    font-weight: 700;
-    color: var(--text-dark);
+    font-weight: 500;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
     position: relative;
 }
 
@@ -139,397 +190,362 @@ header {
     content: '';
     position: absolute;
     width: 0;
-    height: 3px;
-    bottom: -5px;
+    height: 1px;
+    bottom: -4px;
     left: 0;
-    background-color: var(--primary-orange);
-    transition: var(--transition-smooth);
+    background-color: var(--text-primary);
+    transition: var(--transition-base);
 }
 
-.nav-link:hover::after {
+.nav-link:hover::after, .nav-link.active::after {
     width: 100%;
-}
-
-.nav-link:hover {
-    color: var(--primary-orange);
-}
-
-.hamburger {
-    display: none;
-    cursor: pointer;
-    background: none;
-    border: none;
-    z-index: 1001;
-}
-
-.hamburger span {
-    display: block;
-    width: 30px;
-    height: 4px;
-    background-color: var(--text-dark);
-    margin: 6px 0;
-    transition: var(--transition-smooth);
-    border-radius: 2px;
-}
-
-.hamburger.active span:nth-child(1) {
-    transform: translateY(10px) rotate(45deg);
-}
-
-.hamburger.active span:nth-child(2) {
-    opacity: 0;
-    transform: translateX(-20px);
-}
-
-.hamburger.active span:nth-child(3) {
-    transform: translateY(-10px) rotate(-45deg);
 }
 
 /* --- Hero Section --- */
 .hero {
-    padding: 150px 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
     position: relative;
     overflow: hidden;
-    background-size: cover;
-    background-position: center;
-    color: var(--white);
-    margin-bottom: 50px;
+    padding: 0;
+    background-color: var(--bg-primary);
 }
 
-.hero::before {
-    content: '';
+.hero-bg {
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 100%);
-    z-index: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.15;
+    z-index: 0;
 }
 
 .hero-content {
     position: relative;
-    z-index: 2;
-    max-width: 800px;
-    margin: 0 auto;
+    z-index: 1;
 }
 
 .hero h1 {
-    font-size: 4rem;
-    margin-bottom: 20px;
-    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+    font-size: clamp(3.5rem, 10vw, 8rem);
+    line-height: 1.1;
+    margin-bottom: 24px;
+    overflow: hidden;
+}
+
+.hero h1 span {
+    display: inline-block;
 }
 
 .hero p {
     font-size: 1.5rem;
-    margin-bottom: 40px;
-    font-weight: 300;
+    max-width: 600px;
+    margin: 0 auto 48px;
+    opacity: 0;
+    transform: translateY(20px);
 }
 
-/* --- Section Title --- */
-.section-title {
-    text-align: center;
-    margin-bottom: 60px;
-    font-size: 3rem;
-    position: relative;
-    color: var(--primary-coral);
+.btn {
+    display: inline-block;
+    padding: 18px 48px;
+    background-color: var(--text-primary);
+    color: var(--white);
+    font-weight: 600;
+    border-radius: 100px;
+    transition: var(--transition-base);
+    opacity: 0;
+    transform: translateY(20px);
 }
 
-.section-title::after {
-    content: '';
-    display: block;
-    width: 100px;
-    height: 6px;
-    background-color: var(--primary-yellow);
-    margin: 15px auto;
-    border-radius: 10px;
+.btn:hover {
+    transform: scale(1.05);
+    background-color: var(--text-secondary);
 }
 
-/* --- Biographie Culinaire (Accueil) --- */
-.bio-section {
-    padding: 80px 0;
-    background-color: rgba(255, 255, 255, 0.5);
-}
-
-.bio-grid {
+/* --- Continent Grid (Home) --- */
+.continent-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 40px;
+    grid-template-columns: 1fr;
+    gap: 48px;
 }
 
-.bio-item {
-    text-align: center;
-    padding: 30px;
+@media (min-width: 1024px) {
+    .continent-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.continent-card {
     background: var(--white);
-    border-radius: 30px;
-    box-shadow: var(--shadow-light);
-    transition: var(--transition-smooth);
+    border-radius: 24px;
+    padding: 48px;
+    box-shadow: var(--shadow-soft);
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    transition: var(--transition-base);
+    opacity: 0;
+    transform: translateY(40px);
 }
 
-.bio-item:hover {
-    transform: translateY(-10px);
+.continent-card:hover {
+    transform: translateY(-12px);
+    box-shadow: var(--shadow-hover);
 }
 
-.bio-icon {
+.continent-icon {
     font-size: 3rem;
-    margin-bottom: 20px;
-    display: block;
 }
 
-/* --- Grille de Cartes --- */
-.grid {
+.continent-card h3 {
+    font-size: 2.2rem;
+}
+
+.continent-card .bio {
+    flex-grow: 1;
+}
+
+.continent-link {
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.continent-link i {
+    transition: var(--transition-base);
+}
+
+.continent-card:hover .continent-link i {
+    transform: translateX(8px);
+}
+
+/* --- Continent Pages Styles --- */
+.continent-hero {
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    color: var(--white);
+    text-align: center;
+    padding: 0;
+}
+
+.continent-hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.5));
+}
+
+.continent-hero .container {
+    position: relative;
+    z-index: 1;
+}
+
+.continent-hero h1 {
+    font-size: 5rem;
+    margin-bottom: 16px;
+}
+
+.continent-hero blockquote {
+    font-family: var(--font-title);
+    font-style: italic;
+    font-size: 1.8rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Recipe Grid & Flip Cards */
+.recipe-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
     gap: 40px;
-    margin-bottom: 80px;
 }
 
-/* --- Flip Cards (Cartes qui se retournent) --- */
-.flip-card {
-    background-color: transparent;
-    height: 500px;
+.recipe-card {
+    height: 550px;
     perspective: 1500px;
+    opacity: 0;
+    transform: translateY(40px);
 }
 
-.flip-card-inner {
+.recipe-card-inner {
     position: relative;
     width: 100%;
     height: 100%;
-    text-align: center;
-    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    text-align: left;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
     transform-style: preserve-3d;
     cursor: pointer;
 }
 
-.flip-card:hover .flip-card-inner,
-.flip-card-inner.flipped {
+.recipe-card.flipped .recipe-card-inner {
     transform: rotateY(180deg);
 }
 
-.flip-card-front, .flip-card-back {
+.recipe-card-front, .recipe-card-back {
     position: absolute;
     width: 100%;
     height: 100%;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
-    border-radius: 25px;
+    border-radius: 24px;
     overflow: hidden;
-    box-shadow: var(--shadow-light);
+    background: var(--white);
+    box-shadow: var(--shadow-soft);
 }
 
-.flip-card-front {
-    background-color: var(--white);
+.recipe-card-back {
+    transform: rotateY(180deg);
+    padding: 40px;
     display: flex;
     flex-direction: column;
+    overflow-y: auto;
+    background: #fdfdfb;
 }
 
-.flip-card-img {
-    height: 300px;
+/* Scrollbar personnalisée pour le verso */
+.recipe-card-back::-webkit-scrollbar {
+    width: 6px;
+}
+.recipe-card-back::-webkit-scrollbar-track {
+    background: transparent;
+}
+.recipe-card-back::-webkit-scrollbar-thumb {
+    background: rgba(0,0,0,0.1);
+    border-radius: 10px;
+}
+
+.recipe-img-container {
+    height: 320px;
     overflow: hidden;
 }
 
-.flip-card-img img {
+.recipe-img-container img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.flip-card-content {
-    padding: 25px;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.recipe-info {
+    padding: 32px;
 }
 
-.flip-card-content h3 {
+.recipe-meta {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 12px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.recipe-card h3 {
     font-size: 1.8rem;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
-.flip-card-back {
-    background-color: var(--white);
-    transform: rotateY(180deg);
-    padding: 30px;
+.recipe-origin {
+    color: var(--text-secondary);
+    font-weight: 500;
+    margin-bottom: 24px;
+    display: block;
+}
+
+.flip-hint {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
     display: flex;
-    flex-direction: column;
-    text-align: left;
-    border: 4px solid var(--primary-orange);
-    overflow-y: auto;
+    align-items: center;
+    gap: 8px;
+    margin-top: auto;
 }
 
-.flip-card-back h4 {
-    color: var(--primary-coral);
-    margin: 15px 0 10px;
-    border-bottom: 2px solid var(--primary-yellow);
-    display: inline-block;
-    width: fit-content;
+/* Recette Verso */
+.recipe-card-back h4 {
+    margin-top: 24px;
+    margin-bottom: 16px;
+    font-size: 1.4rem;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    padding-bottom: 8px;
 }
 
-.flip-card-back ul {
-    margin-bottom: 15px;
+.recipe-card-back h4:first-of-type {
+    margin-top: 0;
 }
 
-.flip-card-back li {
-    font-size: 0.9rem;
-    margin-bottom: 5px;
-    position: relative;
-    padding-left: 15px;
+.recipe-card-back ul, .recipe-card-back ol {
+    padding-left: 20px;
 }
 
-.flip-card-back li::before {
-    content: '•';
-    position: absolute;
-    left: 0;
-    color: var(--primary-orange);
+.recipe-card-back li {
+    margin-bottom: 8px;
+    font-size: 1rem;
 }
 
-.flip-card-back p {
-    font-size: 0.9rem;
-    line-height: 1.5;
+.btn-flip-back {
+    background: none;
+    border: 1px solid var(--text-primary);
+    padding: 8px 16px;
+    border-radius: 100px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    align-self: flex-start;
+    margin-top: 20px;
 }
 
 /* --- Footer --- */
 footer {
-    background-color: #1a1a1a;
-    color: var(--white);
-    padding: 60px 0 30px;
+    padding: 60px 0;
+    border-top: 1px solid rgba(0,0,0,0.05);
     text-align: center;
 }
 
-.footer-nav {
+.footer-socials {
     display: flex;
     justify-content: center;
-    gap: 30px;
-    margin-bottom: 40px;
-    flex-wrap: wrap;
+    gap: 24px;
+    margin-bottom: 24px;
 }
 
-.footer-nav a {
-    font-weight: 600;
+.footer-socials a {
+    font-size: 1.2rem;
+    opacity: 0.5;
 }
 
-.footer-nav a:hover {
-    color: var(--primary-yellow);
+.footer-socials a:hover {
+    opacity: 1;
 }
 
 .copyright {
     font-size: 0.9rem;
-    opacity: 0.5;
-    margin-top: 30px;
-    border-top: 1px solid rgba(255,255,255,0.1);
-    padding-top: 30px;
+    color: var(--text-secondary);
 }
 
-/* --- Animations --- */
-.fade-in {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 1s ease-out, transform 1s ease-out;
-}
+/* --- Accent Colors Classes --- */
+.page-afrique .recipe-meta, .page-afrique h4 { color: var(--accent-afrique); }
+.page-afrique .btn-flip-back:hover { background: var(--accent-afrique); color: white; border-color: var(--accent-afrique); }
 
-.fade-in.appear {
-    opacity: 1;
-    transform: translateY(0);
-}
+.page-asie .recipe-meta, .page-asie h4 { color: var(--accent-asie); }
+.page-asie .btn-flip-back:hover { background: var(--accent-asie); color: white; border-color: var(--accent-asie); }
 
-/* --- Formes Organiques (Blobs) --- */
-.blob-container {
-    position: relative;
-    overflow: hidden;
-}
+.page-europe .recipe-meta, .page-europe h4 { color: var(--accent-europe); }
+.page-europe .btn-flip-back:hover { background: var(--accent-europe); color: white; border-color: var(--accent-europe); }
 
-.blob {
-    position: absolute;
-    z-index: -1;
-    opacity: 0.15;
-    background-color: var(--primary-yellow);
-    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-    animation: blob-float 20s infinite alternate ease-in-out;
-}
+.page-ameriques .recipe-meta, .page-ameriques h4 { color: var(--accent-ameriques); }
+.page-ameriques .btn-flip-back:hover { background: var(--accent-ameriques); color: white; border-color: var(--accent-ameriques); }
 
-.blob-1 {
-    width: 500px;
-    height: 500px;
-    top: -100px;
-    right: -150px;
-    background-color: var(--primary-orange);
-}
-
-.blob-2 {
-    width: 600px;
-    height: 600px;
-    bottom: -200px;
-    left: -200px;
-    background-color: var(--primary-green);
-    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-}
-
-@keyframes blob-float {
-    0% { transform: translate(0, 0) rotate(0deg) scale(1); }
-    100% { transform: translate(40px, 60px) rotate(20deg) scale(1.1); }
-}
-
-/* --- Responsivite --- */
-@media (max-width: 992px) {
-    .hero h1 { font-size: 3rem; }
-    .grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
-}
-
-@media (max-width: 768px) {
-    .nav-menu {
-        position: fixed;
-        right: -100%;
-        top: 0;
-        height: 100vh;
-        flex-direction: column;
-        justify-content: center;
-        background-color: var(--white);
-        width: 80%;
-        max-width: 300px;
-        text-align: center;
-        transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1);
-        box-shadow: -10px 0 30px rgba(0,0,0,0.1);
-        padding: 50px 0;
-        z-index: 1000;
-    }
-
-    .nav-menu.active {
-        right: 0;
-    }
-
-    .hamburger {
-        display: block;
-    }
-
-    .hero { padding: 100px 0; }
-    .hero h1 { font-size: 2.2rem; }
-    .hero p { font-size: 1.1rem; }
-
-    .section-title { font-size: 2.2rem; }
-}
-
-/* --- Couleurs par Continent pour les Cartes --- */
-.badge {
+/* GSAP Specific */
+.line-child {
     display: inline-block;
-    padding: 6px 15px;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    font-weight: 700;
-    margin-bottom: 15px;
-    color: var(--white);
-    width: fit-content;
 }
-
-.page-afrique .flip-card-back { border-color: var(--color-afrique); }
-.page-afrique .badge { background-color: var(--color-afrique); }
-
-.page-asie .flip-card-back { border-color: var(--color-asie); }
-.page-asie .badge { background-color: var(--color-asie); }
-
-.page-europe .flip-card-back { border-color: var(--color-europe); }
-.page-europe .badge { background-color: var(--color-europe); }
-
-.page-amerique .flip-card-back { border-color: var(--color-amerique); }
-.page-amerique .badge { background-color: var(--color-amerique); }
