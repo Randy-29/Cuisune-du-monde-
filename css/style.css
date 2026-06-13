@@ -1,29 +1,22 @@
-/* Importation des polices Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Nunito:wght@400;600;700&display=swap');
+/* Importation des polices Google Fonts - Style Street Food */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&family=Nunito:wght@400;700;900&display=swap');
 
-/* Variables CSS pour les couleurs et la typographie */
+/* Variables CSS - Thème "Street Food" (Inspiré par aaa.jpeg) */
 :root {
-    --primary-orange: #ff8c42;
-    --primary-yellow: #ffcf33;
-    --primary-green: #2ab7ca; /* Un vert tirant vers le turquoise pour le contraste */
-    --primary-coral: #fe4a49;
-    --background-cream: #fffaf0;
-    --text-dark: #333333;
-    --white: #ffffff;
-    --gray-light: #f4f4f4;
+    --bg-main: #FDF6E3;      /* Crème / Beige clair */
+    --bg-accent: #1B4332;    /* Vert forêt profond */
+    --primary: #EF476F;      /* Rouge Corail / Piment */
+    --secondary: #FFD166;    /* Jaune Moutarde / Safran */
+    --text-dark: #081C15;    /* Vert très sombre pour le texte */
+    --text-light: #FDF6E3;   /* Crème pour texte sur fond sombre */
+    --white: #FFFFFF;
 
-    /* Couleurs par continent */
-    --color-afrique: #d35400; /* Terracotta */
-    --color-asie: #27ae60;    /* Vert */
-    --color-europe: #2980b9;  /* Bleu */
-    --color-amerique: #f1c40f; /* Jaune vif */
-
-    --font-title: 'Baloo 2', cursive;
+    --font-title: 'Fredoka', sans-serif;
     --font-body: 'Nunito', sans-serif;
 
-    --transition-smooth: all 0.3s ease;
-    --shadow-light: 0 4px 15px rgba(0, 0, 0, 0.1);
-    --shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.15);
+    --transition-base: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    --shadow-pop: 8px 8px 0px rgba(0,0,0,0.1);
+    --border-radius: 30px;
 }
 
 /* Reset de base */
@@ -35,75 +28,93 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body {
     font-family: var(--font-body);
-    background-color: var(--background-cream);
+    background-color: var(--bg-main);
     color: var(--text-dark);
     line-height: 1.6;
-    overflow-x: hidden;
+    background-image: radial-gradient(rgba(0,0,0,0.05) 1px, transparent 1px);
+    background-size: 20px 20px; /* Motif de petits points (halftone) */
 }
 
-/* Titres */
-h1, h2, h3 {
+/* Typographie */
+h1, h2, h3, h4 {
     font-family: var(--font-title);
-    font-weight: 800;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+}
+
+p {
+    font-size: 1.1rem;
+    font-weight: 400;
 }
 
 a {
     text-decoration: none;
     color: inherit;
-    transition: var(--transition-smooth);
+    transition: var(--transition-base);
 }
 
-ul {
-    list-style: none;
-}
-
-img {
-    max-width: 100%;
-    display: block;
+/* Whitespace */
+section {
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+    position: relative;
+    z-index: 2;
 }
 
-/* Boutons */
-.btn {
-    display: inline-block;
-    padding: 12px 30px;
-    border-radius: 50px;
-    font-family: var(--font-title);
-    font-weight: 600;
-    font-size: 1.1rem;
-    cursor: pointer;
-    border: none;
-    transition: var(--transition-smooth);
-}
-
-.btn-primary {
-    background-color: var(--primary-orange);
+/* --- Loading Screen --- */
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-accent);
     color: var(--white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
 }
 
-.btn-primary:hover {
-    background-color: var(--primary-coral);
-    transform: translateY(-3px);
-    box-shadow: var(--shadow-hover);
+.loader-logo {
+    font-family: var(--font-title);
+    font-size: 3rem;
+    animation: bounce 1s infinite alternate;
+}
+
+@keyframes bounce {
+    from { transform: translateY(0); }
+    to { transform: translateY(-20px); }
 }
 
 /* --- Header & Navigation --- */
 header {
-    background-color: var(--white);
-    padding: 15px 0;
-    box-shadow: var(--shadow-light);
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 0;
     z-index: 1000;
+    transition: var(--transition-base);
+}
+
+header.scrolled {
+    background: var(--white);
+    padding: 10px 0;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
 }
 
 .nav-container {
@@ -113,301 +124,270 @@ header {
 }
 
 .logo {
-    font-family: var(--font-title);
     font-size: 1.8rem;
-    color: var(--primary-coral);
-    font-weight: 800;
+    color: var(--bg-accent);
+    font-weight: 900;
 }
 
 .nav-menu {
     display: flex;
-    gap: 25px;
+    gap: 30px;
 }
 
-.nav-link {
-    font-weight: 600;
-    color: var(--text-dark);
-}
-
-.nav-link:hover {
-    color: var(--primary-orange);
-}
-
-.hamburger {
+/* Hamburger pour mobile */
+.menu-toggle {
     display: none;
+    flex-direction: column;
+    gap: 5px;
     cursor: pointer;
-    background: none;
-    border: none;
 }
 
-.hamburger span {
+.menu-toggle span {
     display: block;
     width: 25px;
     height: 3px;
-    background-color: var(--text-dark);
-    margin: 5px 0;
-    transition: var(--transition-smooth);
-    transform-origin: center;
+    background-color: var(--bg-accent);
+    border-radius: 3px;
 }
 
-.hamburger.active span:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
+@media (max-width: 768px) {
+    .menu-toggle { display: flex; }
+    .nav-menu {
+        position: fixed;
+        top: 0; right: -100%;
+        width: 100%; height: 100vh;
+        background: var(--bg-accent);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: 0.4s;
+    }
+    .nav-menu.active { right: 0; }
+    .nav-link { color: var(--white) !important; font-size: 2rem; }
 }
 
-.hamburger.active span:nth-child(2) {
-    opacity: 0;
+.nav-link {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--bg-accent);
+    position: relative;
 }
 
-.hamburger.active span:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
+.nav-link.active, .nav-link:hover {
+    color: var(--primary);
 }
 
 /* --- Hero Section --- */
 .hero {
-    padding: 100px 0;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    background-size: cover;
-    background-position: center;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    background: var(--bg-accent);
     color: var(--white);
+    clip-path: ellipse(150% 100% at 50% 0%);
+    padding-top: 100px;
 }
 
-.hero::before {
-    content: '';
+.hero-bg {
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.4);
-    z-index: 1;
+    top: 0; left: 0; width: 100%; height: 100%;
+    object-fit: cover;
+    opacity: 0.3;
+    z-index: 0;
+    filter: grayscale(100%);
 }
 
 .hero-content {
-    position: relative;
-    z-index: 2;
-    max-width: 800px;
-    margin: 0 auto;
+    max-width: 700px;
+    text-align: left;
 }
 
 .hero h1 {
-    font-size: 3.5rem;
+    font-size: clamp(4rem, 12vw, 8rem);
+    line-height: 0.9;
     margin-bottom: 20px;
 }
 
 .hero p {
     font-size: 1.4rem;
     margin-bottom: 30px;
+    color: var(--secondary);
 }
 
-/* --- Section Title --- */
-.section-title {
-    text-align: center;
-    margin-bottom: 50px;
-    font-size: 2.5rem;
-    position: relative;
+.btn {
+    display: inline-block;
+    padding: 20px 50px;
+    background-color: var(--primary);
+    color: var(--white);
+    font-weight: 900;
+    border-radius: var(--border-radius);
+    font-size: 1.2rem;
+    box-shadow: 0 10px 0px rgba(0,0,0,0.2);
 }
 
-.section-title::after {
-    content: '';
-    display: block;
-    width: 80px;
-    height: 5px;
-    background-color: var(--primary-yellow);
-    margin: 10px auto;
-    border-radius: 5px;
+.btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 0px rgba(0,0,0,0.2);
 }
 
-/* --- Cards --- */
-.grid {
+/* --- Continent Cards (Repeated Background Text) --- */
+#continents {
+    background-color: var(--bg-main);
+}
+
+.continent-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    margin-bottom: 50px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
 }
 
-.card {
-    background-color: var(--white);
-    border-radius: 20px;
+.continent-card {
+    background: var(--white);
+    border: 4px solid var(--bg-accent);
+    border-radius: var(--border-radius);
+    padding: 40px;
+    position: relative;
     overflow: hidden;
-    box-shadow: var(--shadow-light);
-    transition: var(--transition-smooth);
+    transition: var(--transition-base);
+}
+
+/* Effet texte répété en arrière-plan (MENU MENU MENU) */
+.continent-card::before {
+    content: "CONTINENT CONTINENT CONTINENT";
+    position: absolute;
+    top: 10px;
+    left: -20px;
+    font-family: var(--font-title);
+    font-weight: 900;
+    font-size: 4rem;
+    color: rgba(27, 67, 50, 0.05);
+    white-space: nowrap;
+    transform: rotate(-10deg);
+    z-index: 0;
+    pointer-events: none;
+}
+
+.continent-card:hover {
+    transform: translate(-10px, -10px);
+    box-shadow: 15px 15px 0px var(--secondary);
+}
+
+.continent-icon { font-size: 4rem; margin-bottom: 20px; position: relative; z-index: 1; }
+.continent-card h3 { font-size: 2.5rem; color: var(--bg-accent); position: relative; z-index: 1; }
+.continent-card .bio { margin: 20px 0; position: relative; z-index: 1; }
+.continent-link {
+    color: var(--primary);
+    font-weight: 900;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative; z-index: 1;
+}
+
+/* --- Continent Pages & Flip Cards --- */
+.continent-hero {
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    color: var(--white);
+    border-bottom: 10px solid var(--secondary);
+}
+
+.continent-hero h1 { font-size: 6rem; text-shadow: 5px 5px 0px var(--primary); }
+
+.recipe-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 50px;
+}
+
+.recipe-card {
+    height: 600px;
+    perspective: 1000px;
+}
+
+.recipe-card-inner {
+    width: 100%; height: 100%;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+}
+
+.recipe-card.flipped .recipe-card-inner { transform: rotateY(180deg); }
+
+.recipe-card-front, .recipe-card-back {
+    position: absolute;
+    width: 100%; height: 100%;
+    backface-visibility: hidden;
+    border: 5px solid var(--bg-accent);
+    border-radius: var(--border-radius);
+    background: var(--white);
+    overflow: hidden;
+}
+
+.recipe-card-back {
+    transform: rotateY(180deg);
+    padding: 30px;
+    background: var(--bg-accent);
+    color: var(--white);
     display: flex;
     flex-direction: column;
 }
 
-.card:hover {
-    transform: translateY(-10px);
-    box-shadow: var(--shadow-hover);
+.recipe-img-container {
+    height: 350px;
+    border-bottom: 5px solid var(--bg-accent);
 }
 
-.card-img {
-    height: 200px;
-    overflow: hidden;
-}
+.recipe-img-container img { width: 100%; height: 100%; object-fit: cover; }
 
-.card-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: var(--transition-smooth);
-}
+.recipe-info { padding: 25px; }
 
-.card:hover .card-img img {
-    transform: scale(1.1);
-}
-
-.card-body {
-    padding: 25px;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-}
-
-.card-body h3 {
-    font-size: 1.5rem;
+.recipe-meta {
+    background: var(--primary);
+    color: var(--white);
+    padding: 5px 15px;
+    border-radius: 50px;
+    display: inline-block;
+    font-weight: 800;
     margin-bottom: 15px;
 }
 
-.card-body p {
-    font-size: 0.95rem;
-    color: #666;
-    margin-bottom: 20px;
-}
+.recipe-card h3 { font-size: 2rem; color: var(--bg-accent); }
+.recipe-origin { font-style: italic; color: var(--primary); font-weight: 700; }
 
-.badge {
-    display: inline-block;
-    padding: 4px 12px;
-    border-radius: 20px;
-    font-size: 0.85rem;
-    font-weight: 700;
-    margin-bottom: 10px;
+/* Recette Back */
+.recipe-card-back h4 { color: var(--secondary); margin-bottom: 10px; font-size: 1.5rem; }
+.recipe-card-back ul, .recipe-card-back ol { margin-left: 20px; margin-bottom: 20px; }
+.btn-flip-back {
+    background: var(--primary);
     color: var(--white);
-    width: fit-content;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-weight: 800;
+    cursor: pointer;
+    align-self: flex-start;
+    margin-top: auto;
 }
 
-/* --- Footer --- */
+/* Blobs Décoratifs */
+.blob {
+    position: absolute;
+    z-index: 1;
+    opacity: 0.1;
+    pointer-events: none;
+}
+
+/* Footer */
 footer {
-    background-color: var(--text-dark);
+    background: var(--bg-accent);
     color: var(--white);
-    padding: 50px 0 20px;
+    padding: 50px 0;
     text-align: center;
 }
 
-.footer-nav {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-bottom: 30px;
-}
-
-.footer-nav a:hover {
-    color: var(--primary-yellow);
-}
-
-.copyright {
-    font-size: 0.9rem;
-    opacity: 0.7;
-    margin-top: 20px;
-    border-top: 1px solid rgba(255,255,255,0.1);
-    padding-top: 20px;
-}
-
-/* --- Animations --- */
-.fade-in {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
-
-.fade-in.appear {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* --- Formes Organiques (Blobs) --- */
-.blob-container {
-    position: relative;
-    overflow: hidden;
-}
-
-.blob {
-    position: absolute;
-    z-index: -1;
-    opacity: 0.1;
-    background-color: var(--primary-yellow);
-    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-    animation: blob-float 15s infinite alternate ease-in-out;
-}
-
-.blob-1 {
-    width: 300px;
-    height: 300px;
-    top: -50px;
-    right: -100px;
-    background-color: var(--primary-orange);
-}
-
-.blob-2 {
-    width: 400px;
-    height: 400px;
-    bottom: -150px;
-    left: -150px;
-    background-color: var(--primary-green);
-    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-}
-
-@keyframes blob-float {
-    0% { transform: translate(0, 0) rotate(0deg); }
-    100% { transform: translate(20px, 40px) rotate(15deg); }
-}
-
-/* --- Responsivite --- */
-@media (max-width: 768px) {
-    .nav-menu {
-        position: fixed;
-        right: -100%;
-        top: 70px;
-        flex-direction: column;
-        background-color: var(--white);
-        width: 100%;
-        text-align: center;
-        transition: 0.3s;
-        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        padding: 20px 0;
-    }
-
-    .nav-menu.active {
-        right: 0;
-    }
-
-    .hamburger {
-        display: block;
-    }
-
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-
-    .hero p {
-        font-size: 1.1rem;
-    }
-}
-
-/* --- Styles spécifiques aux pages Continents --- */
-.hero-afrique { background-color: var(--color-afrique); }
-.hero-asie { background-color: var(--color-asie); }
-.hero-europe { background-color: var(--color-europe); }
-.hero-amerique { background-color: var(--color-amerique); }
-
-.badge-afrique { background-color: var(--color-afrique); }
-.badge-asie { background-color: var(--color-asie); }
-.badge-europe { background-color: var(--color-europe); }
-.badge-amerique { background-color: var(--color-amerique); }
-
-/* Hover effect with colored shadow */
-.card-afrique:hover { box-shadow: 0 8px 25px rgba(211, 84, 0, 0.4); }
-.card-asie:hover { box-shadow: 0 8px 25px rgba(39, 174, 96, 0.4); }
-.card-europe:hover { box-shadow: 0 8px 25px rgba(41, 128, 185, 0.4); }
-.card-amerique:hover { box-shadow: 0 8px 25px rgba(241, 196, 15, 0.4); }
+.footer-socials { font-size: 2rem; display: flex; justify-content: center; gap: 30px; margin-bottom: 20px; }
+.copyright { color: var(--secondary); font-weight: 700; }

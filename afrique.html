@@ -3,124 +3,246 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Saveurs du Monde | Afrique</title>
+    <title>Afrique | Saveurs du Monde</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body>
+<body class="page-afrique">
+
     <header>
         <div class="container nav-container">
             <a href="index.html" class="logo">Saveurs du Monde</a>
-            <nav>
+            <nav><div class="menu-toggle" id="mobile-menu"><span></span><span></span><span></span></div>
                 <ul class="nav-menu">
                     <li><a href="index.html" class="nav-link">Accueil</a></li>
-                    <li><a href="afrique.html" class="nav-link">Afrique</a></li>
+                    <li><a href="afrique.html" class="nav-link active">Afrique</a></li>
                     <li><a href="asie.html" class="nav-link">Asie</a></li>
                     <li><a href="europe.html" class="nav-link">Europe</a></li>
                     <li><a href="amerique.html" class="nav-link">Amérique</a></li>
                 </ul>
-                <button class="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
             </nav>
         </div>
     </header>
 
     <main>
-        <section class="hero hero-afrique">
-            <div class="container hero-content">
-                <h1 class="fade-in">Afrique</h1>
-                <p class="fade-in">La cuisine africaine est un voyage de saveurs intenses, mêlant épices, céréales et légumes mijotés pendant des heures. Du tajine marocain aux ragoûts d'Afrique de l'Ouest, chaque plat raconte une histoire de partage et de tradition.</p>
+        <section class="continent-hero" style="background-image: url('https://images.unsplash.com/photo-1547517023-7ca0c162f816?q=80&w=2070&auto=format&fit=crop');">
+            <div class="container">
+                <h1>Afrique</h1>
+                <blockquote>"La cuisine africaine est une mosaïque vibrante de saveurs."</blockquote>
             </div>
         </section>
 
-        <section class="blob-container" style="padding: 80px 0;">
-            <div class="blob blob-1"></div>
-            <div class="blob blob-2"></div>
+        <section class="recipes">
             <div class="container">
-                <h2 class="section-title fade-in">Spécialités locales</h2>
-                <div class="grid">
-                    <article class="card card-afrique fade-in">
-                        <div class="card-img">
-                            <img src="images/tajine.jpg" alt="Tajine">
-                        </div>
-                        <div class="card-body">
-                            <span class="badge badge-afrique">Maroc</span>
-                            <h3>Tajine</h3>
-                            <p>Plat mijoté de viande et légumes parfumés aux épices, cuit dans un plat en terre cuite.</p>
-                        </div>
-                    </article>
-                    <article class="card card-afrique fade-in">
-                        <div class="card-img">
-                            <img src="images/jollof-rice.jpg" alt="Jollof Rice">
-                        </div>
-                        <div class="card-body">
-                            <span class="badge badge-afrique">Nigeria / Ghana</span>
-                            <h3>Jollof Rice</h3>
-                            <p>Riz parfumé mijoté dans une sauce tomate épicée, souvent servi avec viande ou poisson.</p>
-                        </div>
-                    </article>
-                    <article class="card card-afrique fade-in">
-                        <div class="card-img">
-                            <img src="images/injera-wat.jpg" alt="Injera & Wat">
-                        </div>
-                        <div class="card-body">
-                            <span class="badge badge-afrique">Éthiopie</span>
-                            <h3>Injera & Wat</h3>
-                            <p>Galette de teff accompagnée d'un ragoût épicé, à déguster avec les mains.</p>
-                        </div>
-                    </article>
-                    <article class="card card-afrique fade-in">
-                        <div class="card-img">
-                            <img src="images/couscous.jpg" alt="Couscous">
-                        </div>
-                        <div class="card-body">
-                            <span class="badge badge-afrique">Maghreb</span>
-                            <h3>Couscous</h3>
-                            <p>Semoule vapeur servie avec légumes et viande mijotés.</p>
+                <div class="recipe-grid">
+
+                    <!-- Recipe 1 -->
+                    <article class="recipe-card">
+                        <div class="recipe-card-inner">
+                            <div class="recipe-card-front">
+                                <div class="recipe-img-container">
+                                    <img src="https://placehold.co/600x400.jpg?text=Tagine+Morocco" alt="Tagine d'Agneau">
+                                </div>
+                                <div class="recipe-info">
+                                    <div class="recipe-meta">Maroc • Moyen • 2h</div>
+                                    <h3>Tagine d'Agneau</h3>
+                                    <span class="recipe-origin">Classique aux saveurs sucrées-salées.</span>
+                                    <div class="flip-hint"><i class="fa-solid fa-rotate"></i> Cliquez pour voir la recette</div>
+                                </div>
+                            </div>
+                            <div class="recipe-card-back">
+                                <h4>Ingrédients</h4>
+                                <ul>
+                                    <li>1kg d'agneau</li>
+                                    <li>250g pruneaux</li>
+                                    <li>2 oignons, 3 gousses d'ail</li>
+                                    <li>Cannelle, Gingembre, Curcuma</li>
+                                    <li>Miel, amandes effilées</li>
+                                </ul>
+                                <h4>Étapes</h4>
+                                <ol>
+                                    <li>Dorer l'agneau dans l'huile.</li>
+                                    <li>Ajouter oignons et épices.</li>
+                                    <li>Mijoter 1h30 avec bouillon.</li>
+                                    <li>Ajouter pruneaux et miel (30min).</li>
+                                    <li>Servir avec amandes grillées.</li>
+                                </ol>
+                                <button class="btn-flip-back">Retourner</button>
+                            </div>
                         </div>
                     </article>
-                    <article class="card card-afrique fade-in">
-                        <div class="card-img">
-                            <img src="images/bobotie.jpg" alt="Bobotie">
-                        </div>
-                        <div class="card-body">
-                            <span class="badge badge-afrique">Afrique du Sud</span>
-                            <h3>Bobotie</h3>
-                            <p>Viande hachée épicée recouverte d'une couche d'œuf et de lait, cuite au four.</p>
-                        </div>
-                    </article>
-                    <article class="card card-afrique fade-in">
-                        <div class="card-img">
-                            <img src="images/thieboudienne.jpg" alt="Thiéboudienne">
-                        </div>
-                        <div class="card-body">
-                            <span class="badge badge-afrique">Sénégal</span>
-                            <h3>Thiéboudienne</h3>
-                            <p>Plat national à base de riz, poisson et légumes mijotés dans une sauce tomate.</p>
-                        </div>
-                    </article>
-                    <article class="card card-afrique fade-in">
-                        <div class="card-img">
-                            <img src="images/poulet-piri-piri.jpg" alt="Poulet Piri Piri">
-                        </div>
-                        <div class="card-body">
-                            <span class="badge badge-afrique">Mozambique</span>
-                            <h3>Poulet Piri Piri</h3>
-                            <p>Poulet grillé mariné dans une sauce piquante au piment.</p>
-                        </div>
-                    </article>
-                    <article class="card card-afrique fade-in">
-                        <div class="card-img">
-                            <img src="images/fufu.jpg" alt="Fufu">
-                        </div>
-                        <div class="card-body">
-                            <span class="badge badge-afrique">Afrique centrale</span>
-                            <h3>Fufu</h3>
-                            <p>Pâte de manioc ou d'igname, servie avec une sauce ou soupe épicée.</p>
+
+                    <!-- Recipe 2 -->
+                    <article class="recipe-card">
+                        <div class="recipe-card-inner">
+                            <div class="recipe-card-front">
+                                <div class="recipe-img-container">
+                                    <img src="https://placehold.co/600x400.jpg?text=Doro+Wat+Ethiopia" alt="Doro Wat">
+                                </div>
+                                <div class="recipe-info">
+                                    <div class="recipe-meta">Éthiopie • Difficile • 1h30</div>
+                                    <h3>Doro Wat</h3>
+                                    <span class="recipe-origin">Ragoût de poulet épicé.</span>
+                                    <div class="flip-hint"><i class="fa-solid fa-rotate"></i> Cliquez pour voir la recette</div>
+                                </div>
+                            </div>
+                            <div class="recipe-card-back">
+                                <h4>Ingrédients</h4>
+                                <ul>
+                                    <li>1kg poulet</li>
+                                    <li>Beurre niter kibbeh</li>
+                                    <li>Oignons hachés, Berbère</li>
+                                    <li>Tomates concassées</li>
+                                    <li>4 œufs durs</li>
+                                </ul>
+                                <h4>Étapes</h4>
+                                <ol>
+                                    <li>Réduire oignons sans huile.</li>
+                                    <li>Ajouter beurre et berbère.</li>
+                                    <li>Cuire poulet dans sauce tomate.</li>
+                                    <li>Ajouter œufs durs à la fin.</li>
+                                </ol>
+                                <button class="btn-flip-back">Retourner</button>
+                            </div>
                         </div>
                     </article>
+
+                    <!-- Recipe 3 -->
+                    <article class="recipe-card">
+                        <div class="recipe-card-inner">
+                            <div class="recipe-card-front">
+                                <div class="recipe-img-container">
+                                    <img src="https://placehold.co/600x400.jpg?text=Jollof+Rice+Nigeria" alt="Jollof Rice">
+                                </div>
+                                <div class="recipe-info">
+                                    <div class="recipe-meta">Nigeria • Moyen • 1h</div>
+                                    <h3>Jollof Rice</h3>
+                                    <span class="recipe-origin">Riz épicé à la tomate.</span>
+                                    <div class="flip-hint"><i class="fa-solid fa-rotate"></i> Cliquez pour voir la recette</div>
+                                </div>
+                            </div>
+                            <div class="recipe-card-back">
+                                <h4>Ingrédients</h4>
+                                <ul>
+                                    <li>Riz long grain</li>
+                                    <li>Tomates, poivrons, oignons</li>
+                                    <li>Thym, Curry, Laurier</li>
+                                    <li>Bouillon poulet</li>
+                                </ul>
+                                <h4>Étapes</h4>
+                                <ol>
+                                    <li>Mixer légumes et frire 15min.</li>
+                                    <li>Ajouter épices et bouillon.</li>
+                                    <li>Cuire le riz dans la sauce.</li>
+                                    <li>Laisser reposer avant service.</li>
+                                </ol>
+                                <button class="btn-flip-back">Retourner</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Recipe 4 -->
+                    <article class="recipe-card">
+                        <div class="recipe-card-inner">
+                            <div class="recipe-card-front">
+                                <div class="recipe-img-container">
+                                    <img src="https://placehold.co/600x400.jpg?text=South+African+Bobotie" alt="Bobotie">
+                                </div>
+                                <div class="recipe-info">
+                                    <div class="recipe-meta">Af. du Sud • Moyen • 1h</div>
+                                    <h3>Bobotie</h3>
+                                    <span class="recipe-origin">Viande hachée épicée gratinée.</span>
+                                    <div class="flip-hint"><i class="fa-solid fa-rotate"></i> Cliquez pour voir la recette</div>
+                                </div>
+                            </div>
+                            <div class="recipe-card-back">
+                                <h4>Ingrédients</h4>
+                                <ul>
+                                    <li>750g bœuf haché</li>
+                                    <li>Curry, confiture abricot</li>
+                                    <li>Raisins secs, pain au lait</li>
+                                    <li>Œufs et lait (crème)</li>
+                                </ul>
+                                <h4>Étapes</h4>
+                                <ol>
+                                    <li>Sauter bœuf et oignons.</li>
+                                    <li>Ajouter curry, raisins, pain.</li>
+                                    <li>Verser mélange œufs/lait dessus.</li>
+                                    <li>Cuire au four 45min à 180°C.</li>
+                                </ol>
+                                <button class="btn-flip-back">Retourner</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Recipe 5 -->
+                    <article class="recipe-card">
+                        <div class="recipe-card-inner">
+                            <div class="recipe-card-front">
+                                <div class="recipe-img-container">
+                                    <img src="https://placehold.co/600x400.jpg?text=Senegal+Chicken+Yassa" alt="Yassa Poulet">
+                                </div>
+                                <div class="recipe-info">
+                                    <div class="recipe-meta">Sénégal • Moyen • 1h</div>
+                                    <h3>Yassa Poulet</h3>
+                                    <span class="recipe-origin">Poulet mariné au citron/oignons.</span>
+                                    <div class="flip-hint"><i class="fa-solid fa-rotate"></i> Cliquez pour voir la recette</div>
+                                </div>
+                            </div>
+                            <div class="recipe-card-back">
+                                <h4>Ingrédients</h4>
+                                <ul>
+                                    <li>1 poulet découpé</li>
+                                    <li>4 gros oignons</li>
+                                    <li>Citron, Moutarde, Ail</li>
+                                    <li>Olives vertes</li>
+                                </ul>
+                                <h4>Étapes</h4>
+                                <ol>
+                                    <li>Mariner poulet 4h (citron/oignon).</li>
+                                    <li>Griller le poulet séparément.</li>
+                                    <li>Cuire sauce oignons 20min.</li>
+                                    <li>Finir cuisson poulet dans sauce.</li>
+                                </ol>
+                                <button class="btn-flip-back">Retourner</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Recipe 6 -->
+                    <article class="recipe-card">
+                        <div class="recipe-card-inner">
+                            <div class="recipe-card-front">
+                                <div class="recipe-img-container">
+                                    <img src="https://placehold.co/600x400.jpg?text=Algeria+Couscous" alt="Couscous">
+                                </div>
+                                <div class="recipe-info">
+                                    <div class="recipe-meta">Algérie • Difficile • 2h</div>
+                                    <h3>Couscous Royal</h3>
+                                    <span class="recipe-origin">Générosité de viandes/légumes.</span>
+                                    <div class="flip-hint"><i class="fa-solid fa-rotate"></i> Cliquez pour voir la recette</div>
+                                </div>
+                            </div>
+                            <div class="recipe-card-back">
+                                <h4>Ingrédients</h4>
+                                <ul>
+                                    <li>Semoule, Agneau, Merguez</li>
+                                    <li>Carottes, Navets, Courgettes</li>
+                                    <li>Pois chiches</li>
+                                    <li>Ras el hanout</li>
+                                </ul>
+                                <h4>Étapes</h4>
+                                <ol>
+                                    <li>Cuire agneau et légumes en bouillon.</li>
+                                    <li>Préparer semoule vapeur (3 fois).</li>
+                                    <li>Griller merguez à part.</li>
+                                    <li>Dresser et arroser de bouillon.</li>
+                                </ol>
+                                <button class="btn-flip-back">Retourner</button>
+                            </div>
+                        </div>
+                    </article>
+
                 </div>
             </div>
         </section>
@@ -128,17 +250,12 @@
 
     <footer>
         <div class="container">
-            <nav class="footer-nav">
-                <a href="index.html">Accueil</a>
-                <a href="afrique.html">Afrique</a>
-                <a href="asie.html">Asie</a>
-                <a href="europe.html">Europe</a>
-                <a href="amerique.html">Amérique</a>
-            </nav>
-            <p class="copyright">Projet scolaire – Saveurs du Monde &copy; 2023</p>
+            <p>Saveurs du Monde &copy; 2023</p>
         </div>
     </footer>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>
