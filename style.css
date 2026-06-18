@@ -1,24 +1,10 @@
-/* ============================================
-   GASTRONOMIE DU MONDE - CSS pour débutant
-   Thème : Fond noir + Orange brûlé + Sable
-   ============================================ */
 
-/* --------------------------------------------------
-   1. RESET
-   On enlève les marges et padding par défaut du
-   navigateur pour repartir de zéro.
-   -------------------------------------------------- */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* --------------------------------------------------
-   2. COULEURS DU PROJET (Variables)
-   On définit des "variables" pour réutiliser les
-   mêmes couleurs partout sans se tromper.
-   -------------------------------------------------- */
 :root {
     /* Fond */
     --noir: #0a0a0a;           /* Fond principal très noir */
