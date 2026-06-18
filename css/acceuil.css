@@ -1,0 +1,444 @@
+/* ============================================
+   GASTRONOMIE DU MONDE - CSS pour débutant
+   Thème : Fond noir + Orange brûlé + Sable
+   ============================================ */
+
+/* --------------------------------------------------
+   1. RESET
+   On enlève les marges et padding par défaut du
+   navigateur pour repartir de zéro.
+   -------------------------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* --------------------------------------------------
+   2. COULEURS DU PROJET (Variables)
+   On définit des "variables" pour réutiliser les
+   mêmes couleurs partout sans se tromper.
+   -------------------------------------------------- */
+:root {
+    /* Fond */
+    --noir: #0a0a0a;           /* Fond principal très noir */
+    --noir-gris: #141414;      /* Fond des cartes et sections */
+    --noir-leger: #1e1e1e;     /* Survol, bordures */
+
+    /* Orange brûlé */
+    --orange: #e67e22;         /* Orange vif (boutons, accents) */
+    --orange-brule: #d35400;    /* Orange plus foncé (dégradés) */
+    --orange-clair: #f39c12;    /* Orange clair (survol) */
+
+    /* Sable / Beige */
+    --sable: #d4a574;           /* Sable moyen (titres, icônes) */
+    --sable-clair: #e6d5b8;     /* Sable clair (texte principal) */
+    --sable-fonce: #a08060;     /* Sable foncé (sous-titres) */
+
+    /* Texte */
+    --blanc: #f0f0f0;           /* Blanc cassé (lisible sur noir) */
+    --gris: #888888;            /* Gris (texte secondaire) */
+}
+
+/* --------------------------------------------------
+   3. BODY = corps de la page
+   C'est ici qu'on met le fond noir général.
+   -------------------------------------------------- */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--noir);
+    color: var(--sable-clair);
+    line-height: 1.6;
+}
+
+/* --------------------------------------------------
+   4. HEADER = bandeau du haut avec le logo + menu
+   -------------------------------------------------- */
+header {
+    background-color: var(--noir-gris);
+    color: var(--blanc);
+    padding: 20px;
+    text-align: center;
+    border-bottom: 3px solid var(--orange-brule);
+    position: sticky;   /* Le menu reste collé en haut quand on descend */
+    top: 0;
+    z-index: 100;
+}
+
+header h1 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: var(--orange);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+}
+
+/* --------------------------------------------------
+   5. NAVIGATION = les liens du menu
+   -------------------------------------------------- */
+nav ul {
+    list-style: none;   /* Enlève les puces */
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+nav ul li a {
+    color: var(--sable-clair);
+    text-decoration: none;   /* Enlève le soulignement */
+    padding: 10px 20px;
+    border-radius: 25px;
+    border: 1px solid var(--sable-fonce);
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+/* Quand la souris passe sur un lien */
+nav ul li a:hover {
+    background-color: var(--orange);
+    color: var(--noir);
+    border-color: var(--orange);
+    transform: translateY(-2px);
+}
+
+/* Lien actif (la page où on est) */
+nav ul li a[href="index.html"] {
+    background-color: var(--orange-brule);
+    color: var(--blanc);
+    border-color: var(--orange-brule);
+}
+
+/* --------------------------------------------------
+   6. HERO = grande bannière d'accueil
+   -------------------------------------------------- */
+.hero {
+    /* Image de fond */
+    background-image: url('/home/loops/Bureau/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    min-height: 100vh;   /* Prend toute la hauteur de l'écran */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    position: relative;
+}
+
+/* Voile sombre par-dessus l'image pour que le texte se lise bien */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+}
+
+/* On remonte le texte AU-DESSUS du voile sombre */
+.hero h2,
+.hero p,
+.hero .btn {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h2 {
+    font-size: 3rem;
+    color: var(--orange);
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.9);
+    animation: fadeInDown 1s ease;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: var(--sable-clair);
+    max-width: 600px;
+    margin-bottom: 30px;
+    animation: fadeInUp 1s ease 0.3s both;
+}
+
+/* --------------------------------------------------
+   7. BOUTONS
+   -------------------------------------------------- */
+.btn {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--orange) 0%, var(--orange-brule) 100%);
+    color: var(--blanc);
+    padding: 14px 35px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    border: 2px solid var(--orange);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    animation: fadeInUp 1s ease 0.6s both;
+}
+
+.btn:hover {
+    background: transparent;
+    color: var(--orange);
+    transform: translateY(-3px);
+    box-shadow: 0 0 20px rgba(230, 126, 34, 0.4);
+}
+
+/* --------------------------------------------------
+   8. PRESENTATION = sections de texte (Bienvenue, etc.)
+   -------------------------------------------------- */
+.presentation {
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.presentation h2 {
+    font-size: 2.2rem;
+    color: var(--orange);
+    margin-bottom: 20px;
+}
+
+/* Ligne décorative orange sous le titre */
+.presentation h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: var(--orange);
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+.presentation p {
+    font-size: 1.1rem;
+    color: var(--gris);
+}
+
+/* --------------------------------------------------
+   9. SPECIALITES = conteneur des cartes
+   -------------------------------------------------- */
+.specialites {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 0 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+}
+
+/* Titre de la section spécialités */
+.specialites > h2 {
+    width: 100%;
+    text-align: center;
+    font-size: 2.2rem;
+    color: var(--orange);
+    margin-bottom: 20px;
+}
+
+.specialites > h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: var(--orange);
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+/* --------------------------------------------------
+   10. CARTE = chaque petite case (Italie, Japon, etc.)
+   -------------------------------------------------- */
+.carte {
+    background-color: var(--noir-gris);
+    border-radius: 15px;
+    padding: 30px;
+    max-width: 320px;
+    flex: 1 1 280px;
+    text-align: center;
+    border: 1px solid var(--noir-leger);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Ligne orange en haut de la carte */
+.carte::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--orange), var(--sable));
+}
+
+/* Effet quand on passe la souris sur une carte */
+.carte:hover {
+    transform: translateY(-8px);
+    border-color: var(--orange);
+    box-shadow: 0 10px 30px rgba(230, 126, 34, 0.15);
+}
+
+.carte h3 {
+    font-size: 1.4rem;
+    color: var(--sable);
+    margin-bottom: 15px;
+}
+
+.carte p {
+    color: var(--gris);
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+/* Liens à l'intérieur des cartes (ex: continents) */
+.carte a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.carte a:hover h3 {
+    color: var(--orange);
+}
+
+/* --------------------------------------------------
+   11. FORMULAIRE (Newsletter)
+   -------------------------------------------------- */
+form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+}
+
+form input[type="email"] {
+    padding: 14px 20px;
+    border: 2px solid var(--noir-leger);
+    border-radius: 30px;
+    background-color: var(--noir-gris);
+    color: var(--sable-clair);
+    font-size: 1rem;
+    width: 280px;
+    font-family: inherit;
+    transition: all 0.3s ease;
+}
+
+form input[type="email"]:focus {
+    outline: none;
+    border-color: var(--orange);
+    box-shadow: 0 0 10px rgba(230, 126, 34, 0.2);
+}
+
+form input[type="email"]::placeholder {
+    color: var(--sable-fonce);
+}
+
+/* --------------------------------------------------
+   12. FOOTER = pied de page
+   -------------------------------------------------- */
+footer {
+    background-color: var(--noir-gris);
+    color: var(--gris);
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 80px;
+    border-top: 3px solid var(--orange-brule);
+}
+
+/* --------------------------------------------------
+   13. ANIMATIONS (apparition progressive)
+   -------------------------------------------------- */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --------------------------------------------------
+   14. RESPONSIVE = adaptation mobile
+   Quand l'écran est petit (téléphone), on réduit
+   les tailles et on empile les éléments.
+   -------------------------------------------------- */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.4rem;
+    }
+
+    nav ul {
+        gap: 5px;
+    }
+
+    nav ul li a {
+        padding: 8px 14px;
+        font-size: 0.85rem;
+    }
+
+    .hero {
+        min-height: 80vh;
+        background-attachment: scroll; /* Fixe un bug sur mobile */
+    }
+
+    .hero h2 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .presentation,
+    .specialites {
+        margin: 40px auto;
+    }
+
+    .carte {
+        flex: 1 1 100%;   /* Les cartes prennent toute la largeur */
+        max-width: 100%;
+    }
+
+    form input[type="email"] {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h2 {
+        font-size: 1.6rem;
+    }
+
+    .presentation h2,
+    .specialites > h2 {
+        font-size: 1.8rem;
+    }
+
+    .btn {
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
+}
