@@ -3,255 +3,258 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amérique | Saveurs du Monde</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Amérique - Gastronomie du Monde</title>
+    <link rel="stylesheet" href="accueil.css">
+    <style>
+        .plats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .plat {
+            background:rgba(255, 255, 255, 0.13);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .plat:hover {
+            transform: scale(1.02);
+        }
+        .plat img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+        .plat-info {
+            padding: 20px 25px 25px;
+        }
+        .pays {
+            display: inline-block;
+            background: #e67e22;
+            color: white;
+            padding: 4px 14px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .plat-info h3 {
+            font-size: 1.5rem;
+            color: #f1f3f5;
+            margin-bottom: 8px;
+        }
+        .plat-info p {
+            color: #ffffff;
+            line-height: 1.6;
+            margin-bottom: 12px;
+        }
+        .ingredients {
+            background: rgba(255, 255, 255, 0.13);
+            border-radius: 10px;
+            padding: 12px 15px;
+            margin-top: 10px;
+        }
+        .ingredients strong {
+            color: #e67e22;
+            display: block;
+            margin-bottom: 6px;
+        }
+        .ingredients ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .ingredients li {
+            color: #ffffff;
+            font-size: 0.9rem;
+            padding: 2px 0;
+            padding-left: 18px;
+            position: relative;
+        }
+        .ingredients li::before {
+            content: "•";
+            color: #e67e22;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        .intro {
+            text-align: center;
+            max-width: 700px;
+            margin: 30px auto 40px;
+            padding: 0 20px;
+        }
+        .intro p {
+            font-size: 1.1rem;
+            color: #555;
+        }
+        @media (max-width: 600px) {
+            .plats {
+                grid-template-columns: 1fr;
+                padding: 15px;
+                gap: 20px;
+            }
+            .plat img {
+                height: 170px;
+            }
+        }
+    </style>
+<base target="_blank">
 </head>
-<body class="page-ameriques">
+<body>
 
     <header>
-        <div class="container nav-container">
-            <a href="index.html" class="logo">Saveurs du Monde</a>
-            <nav><div class="menu-toggle" id="mobile-menu"><span></span><span></span><span></span></div>
-                <ul class="nav-menu">
-                    <li><a href="index.html" class="nav-link">Accueil</a></li>
-                    <li><a href="afrique.html" class="nav-link">Afrique</a></li>
-                    <li><a href="asie.html" class="nav-link">Asie</a></li>
-                    <li><a href="europe.html" class="nav-link">Europe</a></li>
-                    <li><a href="amerique.html" class="nav-link active">Amérique</a></li>
-                </ul>
-            </nav>
-        </div>
+        <h1>🌍 Gastronomie du Monde</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="afrique.html">Afrique</a></li>
+                <li><a href="europe.html">Europe</a></li>
+                <li><a href="asie.html">Asie</a></li>
+                <li><a href="amerique.html">Amérique</a></li>
+                
+            </ul>
+        </nav>
     </header>
 
-    <main>
-        <section class="continent-hero" style="background-image: url('https://images.unsplash.com/photo-1506477331477-33d6d8b3dc85?q=80&w=2070&auto=format&fit=crop');">
-            <div class="container">
-                <h1>Amérique</h1>
-                <blockquote>"Un melting-pot vibrant, audacieux et innovant."</blockquote>
-            </div>
-        </section>
+    <section class="hero" style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/home/loops/Bureau/image /a__Cinematic_wide_bann.png') center/cover;">
+        <h2>🌎 L'Amérique et ses saveurs</h2>
+        <p>Découvrez les plats les plus emblématiques du Nouveau Monde.</p>
+    </section>
 
-        <section class="recipes">
-            <div class="container">
-                <div class="recipe-grid">
+    <section class="intro">
+        <h2>Plats traditionnels d'Amérique</h2>
+        <p>Des États-Unis au Mexique, en passant par le Canada et Cuba, explorez une cuisine riche, généreuse et pleine de saveurs.</p>
+    </section>
 
-                    <!-- Recipe 1 -->
-                    <article class="recipe-card">
-                        <div class="recipe-card-inner">
-                            <div class="recipe-card-front">
-                                <div class="recipe-img-container">
-                                    <img src="https://placehold.co/600x400.jpg?text=Peru+Ceviche" alt="Ceviche">
-                                </div>
-                                <div class="recipe-info">
-                                    <div class="recipe-meta">Pérou • Facile • 20min</div>
-                                    <h3>Ceviche</h3>
-                                    <span class="recipe-origin">Poisson frais mariné au citron vert.</span>
-                                    <div class="flip-hint"><i class="fa-solid fa-rotate"></i> Cliquez pour voir la recette</div>
-                                </div>
-                            </div>
-                            <div class="recipe-card-back">
-                                <h4>Ingrédients</h4>
-                                <ul>
-                                    <li>Poisson blanc frais</li>
-                                    <li>Citron vert (Leche de tigre)</li>
-                                    <li>Oignon rouge, Piment</li>
-                                    <li>Coriandre, Patate douce</li>
-                                </ul>
-                                <h4>Étapes</h4>
-                                <ol>
-                                    <li>Couper le poisson en dés.</li>
-                                    <li>Saler et laisser reposer 1min.</li>
-                                    <li>Ajouter le jus de citron vert.</li>
-                                    <li>Servir immédiatement bien frais.</li>
-                                </ol>
-                                <button class="btn-flip-back">Retourner</button>
-                            </div>
-                        </div>
-                    </article>
+    <section class="plats">
 
-                    <!-- Recipe 2 -->
-                    <article class="recipe-card">
-                        <div class="recipe-card-inner">
-                            <div class="recipe-card-front">
-                                <div class="recipe-img-container">
-                                    <img src="https://placehold.co/600x400.jpg?text=Mexico+Tacos" alt="Tacos">
-                                </div>
-                                <div class="recipe-info">
-                                    <div class="recipe-meta">Mexique • Moyen • 4h</div>
-                                    <h3>Tacos al Pastor</h3>
-                                    <span class="recipe-origin">Porc mariné et ananas grillé.</span>
-                                    <div class="flip-hint"><i class="fa-solid fa-rotate"></i> Cliquez pour voir la recette</div>
-                                </div>
-                            </div>
-                            <div class="recipe-card-back">
-                                <h4>Ingrédients</h4>
-                                <ul>
-                                    <li>Échine de porc, Ananas</li>
-                                    <li>Chilis Guajillo, Vinaigre</li>
-                                    <li>Tortillas de maïs</li>
-                                    <li>Coriandre, Oignon</li>
-                                </ul>
-                                <h4>Étapes</h4>
-                                <ol>
-                                    <li>Mariner le porc aux épices.</li>
-                                    <li>Griller viande et ananas.</li>
-                                    <li>Garnir les tortillas chaudes.</li>
-                                    <li>Ajouter oignon et coriandre.</li>
-                                </ol>
-                                <button class="btn-flip-back">Retourner</button>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Recipe 3 -->
-                    <article class="recipe-card">
-                        <div class="recipe-card-inner">
-                            <div class="recipe-card-front">
-                                <div class="recipe-img-container">
-                                    <img src="https://placehold.co/600x400.jpg?text=Canada+Poutine" alt="Poutine">
-                                </div>
-                                <div class="recipe-info">
-                                    <div class="recipe-meta">Canada • Facile • 30min</div>
-                                    <h3>Poutine</h3>
-                                    <span class="recipe-origin">Le réconfort ultime québécois.</span>
-                                    <div class="flip-hint"><i class="fa-solid fa-rotate"></i> Cliquez pour voir la recette</div>
-                                </div>
-                            </div>
-                            <div class="recipe-card-back">
-                                <h4>Ingrédients</h4>
-                                <ul>
-                                    <li>Pommes de terre (frites)</li>
-                                    <li>Fromage en grains (couic-couic)</li>
-                                    <li>Sauce brune (gravy)</li>
-                                </ul>
-                                <h4>Étapes</h4>
-                                <ol>
-                                    <li>Frire les frites maison.</li>
-                                    <li>Préparer une sauce brune épaisse.</li>
-                                    <li>Disposer fromage sur les frites.</li>
-                                    <li>Napper de sauce bouillante.</li>
-                                </ol>
-                                <button class="btn-flip-back">Retourner</button>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Recipe 4 -->
-                    <article class="recipe-card">
-                        <div class="recipe-card-inner">
-                            <div class="recipe-card-front">
-                                <div class="recipe-img-container">
-                                    <img src="https://placehold.co/600x400.jpg?text=Brazil+Feijoada" alt="Feijoada">
-                                </div>
-                                <div class="recipe-info">
-                                    <div class="recipe-meta">Brésil • Difficile • 3h</div>
-                                    <h3>Feijoada</h3>
-                                    <span class="recipe-origin">Ragoût de haricots noirs.</span>
-                                    <div class="flip-hint"><i class="fa-solid fa-rotate"></i> Cliquez pour voir la recette</div>
-                                </div>
-                            </div>
-                            <div class="recipe-card-back">
-                                <h4>Ingrédients</h4>
-                                <ul>
-                                    <li>Haricots noirs</li>
-                                    <li>Porc, Saucisse fumée</li>
-                                    <li>Bacon, Ail, Laurier</li>
-                                    <li>Riz, Oranges</li>
-                                </ul>
-                                <h4>Étapes</h4>
-                                <ol>
-                                    <li>Tremper les haricots 12h.</li>
-                                    <li>Mijoter viandes et haricots.</li>
-                                    <li>Servir avec riz blanc.</li>
-                                    <li>Accompagner de tranches d'orange.</li>
-                                </ol>
-                                <button class="btn-flip-back">Retourner</button>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Recipe 5 -->
-                    <article class="recipe-card">
-                        <div class="recipe-card-inner">
-                            <div class="recipe-card-front">
-                                <div class="recipe-img-container">
-                                    <img src="https://placehold.co/600x400.jpg?text=Argentina+Empanadas" alt="Empanadas">
-                                </div>
-                                <div class="recipe-info">
-                                    <div class="recipe-meta">Argentine • Moyen • 1h</div>
-                                    <h3>Empanadas</h3>
-                                    <span class="recipe-origin">Chaussons à la viande épicée.</span>
-                                    <div class="flip-hint"><i class="fa-solid fa-rotate"></i> Cliquez pour voir la recette</div>
-                                </div>
-                            </div>
-                            <div class="recipe-card-back">
-                                <h4>Ingrédients</h4>
-                                <ul>
-                                    <li>Pâte brisée</li>
-                                    <li>Bœuf haché, Oignons</li>
-                                    <li>Olives, Œufs durs</li>
-                                    <li>Paprika, Cumin</li>
-                                </ul>
-                                <h4>Étapes</h4>
-                                <ol>
-                                    <li>Frire viande et oignons épicés.</li>
-                                    <li>Ajouter olives et œufs.</li>
-                                    <li>Garnir les cercles de pâte.</li>
-                                    <li>Cuire 20min à 200°C.</li>
-                                </ol>
-                                <button class="btn-flip-back">Retourner</button>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Recipe 6 -->
-                    <article class="recipe-card">
-                        <div class="recipe-card-inner">
-                            <div class="recipe-card-front">
-                                <div class="recipe-img-container">
-                                    <img src="https://placehold.co/600x400.jpg?text=Brazil+Moqueca" alt="Moqueca">
-                                </div>
-                                <div class="recipe-info">
-                                    <div class="recipe-meta">Brésil • Moyen • 45min</div>
-                                    <h3>Moqueca de Peixe</h3>
-                                    <span class="recipe-origin">Poisson au lait de coco.</span>
-                                    <div class="flip-hint"><i class="fa-solid fa-rotate"></i> Cliquez pour voir la recette</div>
-                                </div>
-                            </div>
-                            <div class="recipe-card-back">
-                                <h4>Ingrédients</h4>
-                                <ul>
-                                    <li>Poisson blanc, Crevettes</li>
-                                    <li>Lait de coco, Huile de palme</li>
-                                    <li>Poivrons, Tomates</li>
-                                    <li>Coriandre, Citron</li>
-                                </ul>
-                                <h4>Étapes</h4>
-                                <ol>
-                                    <li>Mariner le poisson au citron.</li>
-                                    <li>Dresser les légumes en cocotte.</li>
-                                    <li>Verser le lait de coco.</li>
-                                    <li>Cuire 20min sans remuer.</li>
-                                </ol>
-                                <button class="btn-flip-back">Retourner</button>
-                            </div>
-                        </div>
-                    </article>
-
+        <article class="plat">
+            <img src="/home/loops/Bureau/image /amerique/Hamburger.svg" alt="Hamburger américain">
+            <div class="plat-info">
+                <span class="pays">🇺🇸 États-Unis</span>
+                <h3>Hamburger</h3>
+                <p>Le symbole de la cuisine américaine ! Un steak de bœuf grillé entre deux buns moelleux, avec du cheddar fondant, de la salade, des tomates et des oignons. Un classique incontournable.</p>
+                <div class="ingredients">
+                    <strong>🥘 Ingrédients principaux</strong>
+                    <ul>
+                        <li>Steak haché de bœuf</li>
+                        <li>Pain burger (buns)</li>
+                        <li>Cheddar, salade, tomate</li>
+                        <li>Ketchup, moutarde, oignons</li>
+                    </ul>
                 </div>
             </div>
-        </section>
-    </main>
+        </article>
+
+        <article class="plat">
+            <img src="/home/loops/Bureau/image /amerique/BBQ.svg" alt="BBQ Ribs">
+            <div class="plat-info">
+                <span class="pays">🇺🇸 États-Unis</span>
+                <h3>BBQ Ribs</h3>
+                <p>Les côtes de porc barbecue, un rituel américain ! Cuites lentement au fumoir puis nappées d'une sauce barbecue sucrée et fumée. On les mange avec les doigts !</p>
+                <div class="ingredients">
+                    <strong>🥘 Ingrédients principaux</strong>
+                    <ul>
+                        <li>Côtes de porc (ribs)</li>
+                        <li>Sauce barbecue maison</li>
+                        <li>Épices fumées (paprika, cumin)</li>
+                        <li>Maïs grillé en accompagnement</li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+
+        <article class="plat">
+            <img src="/home/loops/Bureau/image /amerique/Mac_&_Cheese.svg" alt="Mac and Cheese">
+            <div class="plat-info">
+                <span class="pays">🇺🇸 États-Unis</span>
+                <h3>Mac & Cheese</h3>
+                <p>Le confort food américain par excellence ! Des pâtes en forme de coudeilles nappées d'une sauce au cheddar crémeuse et dorées au four. Un plat réconfortant pour toute la famille.</p>
+                <div class="ingredients">
+                    <strong>🥘 Ingrédients principaux</strong>
+                    <ul>
+                        <li>Macaroni (pâtes)</li>
+                        <li>Cheddar, mozzarella</li>
+                        <li>Beurre, farine, lait</li>
+                        <li>Chapelure dorée au four</li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+
+        <article class="plat">
+            <img src="/home/loops/Bureau/image /amerique/tacos.svg" alt="Tacos mexicains">
+            <div class="plat-info">
+                <span class="pays">🇲🇽 Mexique</span>
+                <h3>Tacos</h3>
+                <p>La street food mexicaine la plus célèbre ! Des tortillas de maïs garnies de viande grillée (bœuf, porc ou poulet), oignons, coriandre et sauce salsa. Un explosif de saveurs !</p>
+                <div class="ingredients">
+                    <strong>🥘 Ingrédients principaux</strong>
+                    <ul>
+                        <li>Tortillas de maïs</li>
+                        <li>Viande grillée (carne asada)</li>
+                        <li>Oignons, coriandre fraîche</li>
+                        <li>Salsa, citron vert, avocat</li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+
+        <article class="plat">
+            <img src="/home/loops/Bureau/image /amerique/Poutine.svg" alt="Poutine québécoise">
+            <div class="plat-info">
+                <span class="pays">🇨🇦 Canada</span>
+                <h3>Poutine</h3>
+                <p>Le plat national du Québec ! Des frites épaisses recouvertes de fromage en grains (squeaky cheese) et nappées d'une sauce brune chaude. Un régal gourmand et réconfortant.</p>
+                <div class="ingredients">
+                    <strong>🥘 Ingrédients principaux</strong>
+                    <ul>
+                        <li>Frites épaisses</li>
+                        <li>Fromage en grains (curds)</li>
+                        <li>Sauce brune chaude</li>
+                        <li>Variante : bacon, pulled pork</li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+
+        <article class="plat">
+            <img src="/home/loops/Bureau/image /amerique/Sandwich.svg" alt="Cubano sandwich">
+            <div class="plat-info">
+                <span class="pays">🇨🇺 Cuba</span>
+                <h3>Sandwich Cubano</h3>
+                <p>Le sandwich cubain emblématique ! Du pain croustillant pressé à la plancha, garni de porc mariné, jambon, fromage suisse, cornichons et moutarde. Un classique de Miami et de La Havane.</p>
+                <div class="ingredients">
+                    <strong>🥘 Ingrédients principaux</strong>
+                    <ul>
+                        <li>Pain cubain (baguette)</li>
+                        <li>Porc mariné (lechon)</li>
+                        <li>Jambon, fromage suisse</li>
+                        <li>Cornichons, moutarde, beurre</li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+
+    </section>
+
+    <section style="text-align: center; padding: 40px 20px;">
+        <a href="cuisine.html" class="btn">🏠 Retour à l'accueil</a>
+        <a href="afrique.html" class="btn" style="margin-left: 10px;">➡️ Afrique</a>
+        <a href="europe.html" class="btn" style="margin-left: 10px;">➡️ Europe</a>
+        <a href="asie.html" class="btn" style="margin-left: 10px;">➡️ Asie</a>
+    </section>
 
     <footer>
-        <div class="container">
-            <p>Saveurs du Monde &copy; 2023</p>
-        </div>
+        <p> 2026 -Gastronomie du Monde</p>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="js/script.js"></script>
+    
 </body>
 </html>
