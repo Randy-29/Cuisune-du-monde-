@@ -3,258 +3,257 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Asie | Saveurs du Monde</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Asie - Gastronomie du Monde</title>
+    <link rel="stylesheet" href="accueil.css">
+    <style>
+        .plats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .plat {
+            background:rgba(255, 255, 255, 0.13);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .plat:hover {
+            transform: scale(1.02);
+        }
+        .plat img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+        .plat-info {
+            padding: 20px 25px 25px;
+        }
+        .pays {
+            display: inline-block;
+            background: #e67e22;
+            color: white;
+            padding: 4px 14px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .plat-info h3 {
+            font-size: 1.5rem;
+            color: #f7f8fa;
+            margin-bottom: 8px;
+        }
+        .plat-info p {
+            color: #f5f1f1;
+            line-height: 1.6;
+            margin-bottom: 12px;
+        }
+        .ingredients {
+            background: rgba(255, 255, 255, 0.13);
+            border-radius: 10px;
+            padding: 12px 15px;
+            margin-top: 10px;
+        }
+        .ingredients strong {
+            color: #e67e22;
+            display: block;
+            margin-bottom: 6px;
+        }
+        .ingredients ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .ingredients li {
+            color: #ffffff;
+            font-size: 0.9rem;
+            padding: 2px 0;
+            padding-left: 18px;
+            position: relative;
+        }
+        .ingredients li::before {
+            content: "•";
+            color: #e67e22;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        .intro {
+            text-align: center;
+            max-width: 700px;
+            margin: 30px auto 40px;
+            padding: 0 20px;
+        }
+        .intro p {
+            font-size: 1.1rem;
+            color: #555;
+        }
+        @media (max-width: 600px) {
+            .plats {
+                grid-template-columns: 1fr;
+                padding: 15px;
+                gap: 20px;
+            }
+            .plat img {
+                height: 170px;
+            }
+        }
+    </style>
+<base target="_blank">
 </head>
-<body class="page-asie">
+<body>
 
     <header>
-        <div class="container nav-container">
-            <a href="index.html" class="logo">Saveurs du Monde</a>
-            <nav><div class="menu-toggle" id="mobile-menu"><span></span><span></span><span></span></div>
-                <ul class="nav-menu">
-                    <li><a href="index.html" class="nav-link">Accueil</a></li>
-                    <li><a href="afrique.html" class="nav-link">Afrique</a></li>
-                    <li><a href="asie.html" class="nav-link active">Asie</a></li>
-                    <li><a href="europe.html" class="nav-link">Europe</a></li>
-                    <li><a href="amerique.html" class="nav-link">Amérique</a></li>
-                </ul>
-            </nav>
-        </div>
+        <h1>🌍 Gastronomie du Monde</h1>
+        <nav>
+            <ul>
+                <li><a href="cuisine.html">Accueil</a></li>
+                <li><a href="afrique.html">Afrique</a></li>
+                <li><a href="europe.html">Europe</a></li>
+                <li><a href="asie.html">Asie</a></li>
+                <li><a href="american.html">Amerique</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <main>
-        <section class="continent-hero" style="background-image: url('https://images.unsplash.com/photo-1493770348161-369560ae357d?q=80&w=2070&auto=format&fit=crop');">
-            <div class="container">
-                <h1>Asie</h1>
-                <blockquote>"L'art de l'équilibre entre les cinq saveurs fondamentales."</blockquote>
-            </div>
-        </section>
+    <section class="hero" style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/home/loops/Bureau/image /asie/sushi.svg') center/cover;">
+        <h2>🌏 L'Asie et ses saveurs</h2>
+        <p>Découvrez les plats les plus emblématiques du continent asiatique.</p>
+    </section>
 
-        <section class="recipes">
-            <div class="container">
-                <div class="recipe-grid">
+    <section class="intro">
+        <h2>Plats traditionnels d'Asie</h2>
+        <p>Du Japon à l'Inde, en passant par la Chine, la Thaïlande, la Corée et le Vietnam, explorez une cuisine riche en épices et en saveurs.</p>
+    </section>
 
-                    <!-- Recipe 1 -->
-                    <article class="recipe-card">
-                        <div class="recipe-card-inner">
-                            <div class="recipe-card-front">
-                                <div class="recipe-img-container">
-                                    <img src="https://placehold.co/600x400.jpg?text=Japan+Ramen" alt="Ramen">
-                                </div>
-                                <div class="recipe-info">
-                                    <div class="recipe-meta">Japon • Difficile • 12h</div>
-                                    <h3>Ramen Tonkotsu</h3>
-                                    <span class="recipe-origin">Bouillon onctueux d'os de porc.</span>
-                                    <div class="flip-hint"><i class="fa-solid fa-rotate"></i> Cliquez pour voir la recette</div>
-                                </div>
-                            </div>
-                            <div class="recipe-card-back">
-                                <h4>Ingrédients</h4>
-                                <ul>
-                                    <li>Nouilles ramen</li>
-                                    <li>Bouillon d'os de porc</li>
-                                    <li>Chashu (poitrine de porc)</li>
-                                    <li>Œuf mollet mariné</li>
-                                    <li>Nori, pousses de bambou</li>
-                                </ul>
-                                <h4>Étapes</h4>
-                                <ol>
-                                    <li>Mijoter les os 12h pour le bouillon.</li>
-                                    <li>Préparer le chashu fondant.</li>
-                                    <li>Cuire les nouilles 2min.</li>
-                                    <li>Assembler le bol bien chaud.</li>
-                                </ol>
-                                <button class="btn-flip-back">Retourner</button>
-                            </div>
-                        </div>
-                    </article>
+    <section class="plats">
 
-                    <!-- Recipe 2 -->
-                    <article class="recipe-card">
-                        <div class="recipe-card-inner">
-                            <div class="recipe-card-front">
-                                <div class="recipe-img-container">
-                                    <img src="https://placehold.co/600x400.jpg?text=Thai+Pad+Thai" alt="Pad Thaï">
-                                </div>
-                                <div class="recipe-info">
-                                    <div class="recipe-meta">Thaïlande • Moyen • 30min</div>
-                                    <h3>Pad Thaï</h3>
-                                    <span class="recipe-origin">L'équilibre parfait sucré-salé-acide.</span>
-                                    <div class="flip-hint"><i class="fa-solid fa-rotate"></i> Cliquez pour voir la recette</div>
-                                </div>
-                            </div>
-                            <div class="recipe-card-back">
-                                <h4>Ingrédients</h4>
-                                <ul>
-                                    <li>Nouilles de riz</li>
-                                    <li>Crevettes, Tofu</li>
-                                    <li>Tamarin, Sauce poisson</li>
-                                    <li>Cacahuètes, Citron vert</li>
-                                </ul>
-                                <h4>Étapes</h4>
-                                <ol>
-                                    <li>Sauter ail et tofu.</li>
-                                    <li>Ajouter crevettes et nouilles.</li>
-                                    <li>Verser la sauce au tamarin.</li>
-                                    <li>Garnir de cacahuètes broyées.</li>
-                                </ol>
-                                <button class="btn-flip-back">Retourner</button>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Recipe 3 -->
-                    <article class="recipe-card">
-                        <div class="recipe-card-inner">
-                            <div class="recipe-card-front">
-                                <div class="recipe-img-container">
-                                    <img src="https://placehold.co/600x400.jpg?text=India+Chicken+Biryani" alt="Biryani">
-                                </div>
-                                <div class="recipe-info">
-                                    <div class="recipe-meta">Inde • Difficile • 2h</div>
-                                    <h3>Chicken Biryani</h3>
-                                    <span class="recipe-origin">Riz parfumé aux épices et poulet.</span>
-                                    <div class="flip-hint"><i class="fa-solid fa-rotate"></i> Cliquez pour voir la recette</div>
-                                </div>
-                            </div>
-                            <div class="recipe-card-back">
-                                <h4>Ingrédients</h4>
-                                <ul>
-                                    <li>Riz Basmati</li>
-                                    <li>Poulet, Yaourt</li>
-                                    <li>Masala, Safran</li>
-                                    <li>Oignons frits, Menthe</li>
-                                </ul>
-                                <h4>Étapes</h4>
-                                <ol>
-                                    <li>Mariner le poulet aux épices.</li>
-                                    <li>Cuire le riz à mi-cuisson.</li>
-                                    <li>Alterner les couches riz/viande.</li>
-                                    <li>Cuire à l'étouffée 30min.</li>
-                                </ol>
-                                <button class="btn-flip-back">Retourner</button>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Recipe 4 -->
-                    <article class="recipe-card">
-                        <div class="recipe-card-inner">
-                            <div class="recipe-card-front">
-                                <div class="recipe-img-container">
-                                    <img src="https://placehold.co/600x400.jpg?text=China+Xiaolongbao" alt="Xiaolongbao">
-                                </div>
-                                <div class="recipe-info">
-                                    <div class="recipe-meta">Chine • Expert • 3h</div>
-                                    <h3>Xiaolongbao</h3>
-                                    <span class="recipe-origin">Raviolis au bouillon.</span>
-                                    <div class="flip-hint"><i class="fa-solid fa-rotate"></i> Cliquez pour voir la recette</div>
-                                </div>
-                            </div>
-                            <div class="recipe-card-back">
-                                <h4>Ingrédients</h4>
-                                <ul>
-                                    <li>Porc haché</li>
-                                    <li>Gélatine de bouillon</li>
-                                    <li>Gingembre, Soja</li>
-                                    <li>Pâte à raviolis maison</li>
-                                </ul>
-                                <h4>Étapes</h4>
-                                <ol>
-                                    <li>Préparer la farce et la gélatine.</li>
-                                    <li>Plisser finement les raviolis.</li>
-                                    <li>Cuire à la vapeur 8min.</li>
-                                    <li>Servir avec vinaigre noir.</li>
-                                </ol>
-                                <button class="btn-flip-back">Retourner</button>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Recipe 5 -->
-                    <article class="recipe-card">
-                        <div class="recipe-card-inner">
-                            <div class="recipe-card-front">
-                                <div class="recipe-img-container">
-                                    <img src="https://placehold.co/600x400.jpg?text=Vietnam+Pho" alt="Pho">
-                                </div>
-                                <div class="recipe-info">
-                                    <div class="recipe-meta">Vietnam • Difficile • 7h</div>
-                                    <h3>Pho Bo</h3>
-                                    <span class="recipe-origin">Soupe de nouilles aromatique.</span>
-                                    <div class="flip-hint"><i class="fa-solid fa-rotate"></i> Cliquez pour voir la recette</div>
-                                </div>
-                            </div>
-                            <div class="recipe-card-back">
-                                <h4>Ingrédients</h4>
-                                <ul>
-                                    <li>Os à bœuf</li>
-                                    <li>Anis étoilé, Cannelle</li>
-                                    <li>Nouilles de riz</li>
-                                    <li>Bœuf tranché cru</li>
-                                    <li>Herbes fraîches</li>
-                                </ul>
-                                <h4>Étapes</h4>
-                                <ol>
-                                    <li>Mijoter le bouillon 6h.</li>
-                                    <li>Assembler nouilles et viande.</li>
-                                    <li>Verser le bouillon bouillant.</li>
-                                    <li>Ajouter herbes et citron.</li>
-                                </ol>
-                                <button class="btn-flip-back">Retourner</button>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Recipe 6 -->
-                    <article class="recipe-card">
-                        <div class="recipe-card-inner">
-                            <div class="recipe-card-front">
-                                <div class="recipe-img-container">
-                                    <img src="https://placehold.co/600x400.jpg?text=Korea+Bibimbap" alt="Bibimbap">
-                                </div>
-                                <div class="recipe-info">
-                                    <div class="recipe-meta">Corée • Moyen • 1h</div>
-                                    <h3>Bibimbap</h3>
-                                    <span class="recipe-origin">Bol de riz mélangé.</span>
-                                    <div class="flip-hint"><i class="fa-solid fa-rotate"></i> Cliquez pour voir la recette</div>
-                                </div>
-                            </div>
-                            <div class="recipe-card-back">
-                                <h4>Ingrédients</h4>
-                                <ul>
-                                    <li>Riz, Bœuf</li>
-                                    <li>Carotte, Épinards, Soja</li>
-                                    <li>Œuf au plat</li>
-                                    <li>Gochujang (piment)</li>
-                                </ul>
-                                <h4>Étapes</h4>
-                                <ol>
-                                    <li>Sauter les légumes séparément.</li>
-                                    <li>Cuire le bœuf au soja.</li>
-                                    <li>Dresser le bol harmonieusement.</li>
-                                    <li>Ajouter le piment et mélanger.</li>
-                                </ol>
-                                <button class="btn-flip-back">Retourner</button>
-                            </div>
-                        </div>
-                    </article>
-
+        <article class="plat">
+            <img src="/home/loops/Bureau/image /asie/sushi.svg" alt="Sushi japonais">
+            <div class="plat-info">
+                <span class="pays">🇯🇵 Japon</span>
+                <h3>Sushi</h3>
+                <p>L'art japonais par excellence ! Du riz vinaigré accompagné de poisson cru frais (saumon, thon) ou de fruits de mer. Simple, frais et délicieux.</p>
+                <div class="ingredients">
+                    <strong>🥘 Ingrédients principaux</strong>
+                    <ul>
+                        <li>Riz à sushi vinaigré</li>
+                        <li>Poisson cru (saumon, thon)</li>
+                        <li>Algue nori, wasabi</li>
+                        <li>Sauce soja, gingembre mariné</li>
+                    </ul>
                 </div>
             </div>
-        </section>
-    </main>
+        </article>
+
+        <article class="plat">
+            <img src="/home/loops/Bureau/image /asie/canard.svg" alt="Canard laqué de Pékin">
+            <div class="plat-info">
+                <span class="pays">🇨🇳 Chine</span>
+                <h3>Canard Laqué de Pékin</h3>
+                <p>Le plat impérial chinois ! Un canard entier rôti avec une peau croustillante et brillante, servi avec des crêpes fines, des oignons et de la sauce hoisin.</p>
+                <div class="ingredients">
+                    <strong>🥘 Ingrédients principaux</strong>
+                    <ul>
+                        <li>Canard entier</li>
+                        <li>Miel, sauce soja, cinq-épices</li>
+                        <li>Crêpes fines (mandarin)</li>
+                        <li>Oignons verts, sauce hoisin</li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+
+        <article class="plat">
+            <img src="/home/loops/Bureau/image /asie/Chicken Tikka Masala.svg" alt="Chicken Tikka Masala">
+            <div class="plat-info">
+                <span class="pays">🇮🇳 Inde</span>
+                <h3>Chicken Tikka Masala</h3>
+                <p>Le plat indien le plus célèbre au monde ! Des morceaux de poulet marinés et grillés, servis dans une sauce crémeuse et épicée à base de tomate et de yaourt.</p>
+                <div class="ingredients">
+                    <strong>🥘 Ingrédients principaux</strong>
+                    <ul>
+                        <li>Poulet mariné au yaourt</li>
+                        <li>Sauce tomate crémeuse</li>
+                        <li>Garam masala, curcuma, gingembre</li>
+                        <li>Naan (pain indien)</li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+
+        <article class="plat">
+            <img src="/home/loops/Bureau/image /asie/padthai.svg" alt="Pad Thai thaïlandais">
+            <div class="plat-info">
+                <span class="pays">🇹🇭 Thaïlande</span>
+                <h3>Pad Thai</h3>
+                <p>Le plat de rue thaïlandais le plus populaire ! Des nouilles de riz sautées avec des crevettes, des œufs, des pousses de soja et des cacahuètes concassées.</p>
+                <div class="ingredients">
+                    <strong>🥘 Ingrédients principaux</strong>
+                    <ul>
+                        <li>Nouilles de riz plates</li>
+                        <li>Crevettes ou poulet</li>
+                        <li>Œufs, pousses de soja</li>
+                        <li>Sauce tamarin, cacahuètes</li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+
+        <article class="plat">
+            <img src="/home/loops/Bureau/image /asie/Bibimbap.svg" alt="Bibimbap coréen">
+            <div class="plat-info">
+                <span class="pays">🇰🇷 Corée du Sud</span>
+                <h3>Bibimbap</h3>
+                <p>Un bol coloré et équilibré ! Du riz chaud surmonté de légumes variés, de viande, d'un œuf au plat et de pimenté gochujang. On mélange tout avant de déguster.</p>
+                <div class="ingredients">
+                    <strong>🥘 Ingrédients principaux</strong>
+                    <ul>
+                        <li>Riz blanc chaud</li>
+                        <li>Légumes sautés (épinards, carottes)</li>
+                        <li>Bœuf mariné, œuf au plat</li>
+                        <li>Gochujang (pâte de piment)</li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+
+        <article class="plat">
+            <img src="/home/loops/Bureau/image /asie/pho.svg" alt="Pho vietnamien">
+            <div class="plat-info">
+                <span class="pays">🇻🇳 Vietnam</span>
+                <h3>Pho</h3>
+                <p>La soupe emblématique du Vietnam ! Un bouillon parfumé à la cannelle et au badian, avec des nouilles de riz, du bœuf finement tranché et des herbes fraîches.</p>
+                <div class="ingredients">
+                    <strong>🥘 Ingrédients principaux</strong>
+                    <ul>
+                        <li>Bouillon de bœuf parfumé</li>
+                        <li>Nouilles de riz plates</li>
+                        <li>Bœuf finement tranché</li>
+                        <li>Menthe, basilic, citron, piment</li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+
+    </section>
+
+    <section style="text-align: center; padding: 40px 20px;">
+        <a href="cuisine.html" class="btn">🏠 Retour à l'accueil</a>
+        <a href="afrique.html" class="btn" style="margin-left: 10px;">➡️ Afrique</a>
+        <a href="europe.html" class="btn" style="margin-left: 10px;">➡️ Europe</a>
+        <a href="american.html" class="btn" style="margin-left: 10px;">➡️ Amerique</a>
+    </section>
 
     <footer>
-        <div class="container">
-            <p>Saveurs du Monde &copy; 2023</p>
-        </div>
+        <p> 2026 -Gastronomie du Monde</p>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="js/script.js"></script>
+    
 </body>
 </html>
